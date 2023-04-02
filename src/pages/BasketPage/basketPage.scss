@@ -1,0 +1,95 @@
+.basketpage {
+  h2 {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 120%;
+    transform: uppercase;
+    color: #111111;
+    margin-bottom: 50px;
+  }
+
+  h4 {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 120%;
+    transform: uppercase;
+    color: #111111;
+    margin-bottom: 50px;
+  }
+  .card-basket {
+    display: flex;
+    padding: 50px 0;
+    border-top: 1px dashed rgba(63, 78, 101, 0.3);
+    border-bottom: 1px dashed rgba(63, 78, 101, 0.3);
+
+    &__img {
+      margin-right: 20px;
+      max-width: 281px;
+      max-height: 191px;
+    }
+    &__group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__title {
+      width: 480px;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 36px;
+      color: #111111;
+      margin-bottom: 10px;
+    }
+
+    &__text {
+      width: 444px;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 150%;
+      color: #3f4e65;
+    }
+
+    &__block {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      gap: 44px;
+    }
+    &__br {
+      height: 49px;
+      border-right: 1px dashed rgba(63, 78, 101, 0.2);
+    }
+  }
+}
+
+.order {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+
+  &__btn {
+    width: 192px;
+    height: 59px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 19px;
+    gap: 12px;
+    background: #ffc85e;
+    border-radius: 79px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #ffffff;
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 130%;
+    color: #111111;
+  }
+}

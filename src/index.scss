@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import 'reset.scss';
+
+body {
+  font-family: 'Inter';
+  font-style: normal;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+}
+
+// code {
+//   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+//     monospace;
+// }
+
+.wrapper {
+  max-width: 1370px;
+  margin: 0 auto;
+
+  @media (max-width: 1024px) {
+    max-width: none;
+  }
+}
+
+.container {
+  display: flex;
+  gap: 108px;
+}
+
+.burger__btn {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px;
+  gap: 10px;
+  background: #ffc85e;
+  border-radius: 1000px;
+}
+
+.cardlinkpagination {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  &__item {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__link {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 120%;
+    color: #3f4e65;
+    padding-right: 10px;
+    border-right: 1px dashed rgba(63, 78, 101, 0.3);
+  }
+}

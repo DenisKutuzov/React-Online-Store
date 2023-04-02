@@ -1,0 +1,40 @@
+.catalogPage {
+  padding-bottom: 203px;
+  &__titlegroup {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+
+  }
+  h1 {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #111111;
+  }
+
+  &__createcard-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 19px;
+    gap: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #ffffff;
+    background: #ffc85e;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 79px;
+  }
+  
+}
+
+.cardlinkpagination__text {
+  font-weight: 400;
+font-size: 14px;
+line-height: 150%;
+color: #3F4E65;
+}

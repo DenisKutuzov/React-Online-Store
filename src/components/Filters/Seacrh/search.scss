@@ -1,0 +1,41 @@
+.search {
+margin-bottom: 20px;
+
+  &__title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #111111;
+    margin-bottom: 15px;
+  }
+
+  &__div {
+   
+    width: 238px;
+    position: relative;
+  }
+
+  &__input {
+    height:  59px;
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 10px 13px 20px;
+    gap: 10px;
+    background: #ededed;
+    border-radius: 36px;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    background: #ffc85e;
+    border-radius: 1000px;
+    width: 39px;
+    height: 39px;
+    text-align: center;
+  }
+}
