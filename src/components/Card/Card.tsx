@@ -30,7 +30,7 @@ const Card: FC<CardProps> = ({ card, posts, setPosts }) => {
   return (
     <div className="card">
       <button className='card__btnremove' onClick={() => removeCard(card.id)}>Удалить</button>
-      <img src={card.urlImg} alt="" className="card__urlimg" />
+      <img src={process.env.PUBLIC_URL + card.urlImg} alt="" className="card__urlimg" />
       <p className="card__type">
         <img src={card.type} alt="" />
         450 мл

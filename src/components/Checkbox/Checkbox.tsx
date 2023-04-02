@@ -22,27 +22,26 @@ const Checkbox: FC<CheckboxCards> = ({
   const [list, setList] = useState(false)
 
   // Массив состоящий только из производителей
-// const arr = posts.map((man) => {
-//   return man.manufacturer
-// })
+  // const arr = posts.map((man) => {
+  //   return man.manufacturer
+  // })
 
-// коллекия из 
-// const newArraySet  = Array.from(new Set(posts))
-  
-// console.log(newArraySet)
-// console.log()
-let tmpArray: any[] = [];
+  // коллекия из
+  // const newArraySet  = Array.from(new Set(posts))
 
-function itemCheck(item: ICard) {
+  // console.log(newArraySet)
+  // console.log()
+  let tmpArray: any[] = []
+
+  function itemCheck(item: ICard) {
     if (tmpArray.indexOf(item.manufacturer) === -1) {
-        tmpArray.push(item.manufacturer);
-        return true
+      tmpArray.push(item.manufacturer)
+      return true
     }
-    return false;
-}
+    return false
+  }
 
-tmpArray = posts.filter((item) => itemCheck(item));
-
+  tmpArray = posts.filter((item) => itemCheck(item))
 
   return (
     <div>
@@ -51,11 +50,7 @@ tmpArray = posts.filter((item) => itemCheck(item));
           <div
             className="checkbox "
             key={card.barcode}
-            style={
-              i < 4 || list
-                ? { display: 'flex' }
-                : { display: 'none' }
-            }
+            style={i < 4 || list ? { display: 'flex' } : { display: 'none' }}
           >
             <input
               className="checkbox__input"
@@ -89,9 +84,15 @@ tmpArray = posts.filter((item) => itemCheck(item));
           <label>123</label>
         </div>
       )} */}
-      <button className='checkbox__btn' onClick={() => setList(!list)}>Показать все <img src="/img/checkbox-img.svg" alt="" className='checkbox__img'/> </button>
-      <div className='checkbox__br'></div>
-      
+      <button className="checkbox__btn" onClick={() => setList(!list)}>
+        Показать все{' '}
+        <img
+          src={process.env.PUBLIC_URL + '/img/checkbox-img.svg'}
+          alt=""
+          className="checkbox__img"
+        />{' '}
+      </button>
+      <div className="checkbox__br"></div>
     </div>
   )
 }

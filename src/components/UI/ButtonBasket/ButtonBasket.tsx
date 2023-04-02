@@ -39,7 +39,7 @@ const ButtonBasket: FC<ButtonBasketProps> = ({ card }) => {
         <>Добавлено</>
       ) : (
         <>
-          В КОРЗИНУ <img src="/img/basket-white.svg" alt="" />
+          В КОРЗИНУ <img src={process.env.PUBLIC_URL + "/img/basket-white.svg"} alt="" />
         </>
       )}
     </button>

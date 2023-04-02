@@ -39,10 +39,10 @@ console.log(4)
         <>
           {cardItemBasket.map((card) => (
             <div className="card-basket" key={card.barcode}>
-              <img src={card.urlImg} alt="" className="card-basket__img" />
+              <img src={process.env.PUBLIC_URL + card.urlImg} alt="" className="card-basket__img" />
               <div className="card-basket__group">
                 <div>
-                  <img src={card.type} alt="" />
+                  <img src={process.env.PUBLIC_URL + card.type} alt="" />
                   <p>{card.size}</p>
                 </div>
                 <p className="card-basket__title">{card.title}</p>
@@ -57,7 +57,7 @@ console.log(4)
                 <p className="cardpages__price">{card.price * card.counter } ₸</p>
                 <div className="card-basket__br" />
                 <button onClick={() => onRemoveCardBasket(card)}>
-                  <img src="/img/basket-basket.svg" alt="basket" />
+                  <img src={process.env.PUBLIC_URL + "/img/basket-basket.svg"} alt="basket" />
                 </button>
               </div>
             </div>

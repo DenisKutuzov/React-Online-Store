@@ -22,7 +22,7 @@ const CardPages = () => {
     <>
       {card.map((card, indx) => (
         <div className="cardpages" key={indx}>
-          <img src={card.urlImg} alt="" className="cardpages__img" />
+          <img src={process.env.PUBLIC_URL + card.urlImg} alt="" className="cardpages__img" />
           <div className="cardpages__right">
             <p className="cardpages__availability">В наличие</p>
             <p className="cardpages__title">
@@ -30,7 +30,7 @@ const CardPages = () => {
               {card.title}
             </p>
             <p className="card__type">
-              <img src={card.type} style={{ opacity: '0.2' }} alt="" />
+              <img src={process.env.PUBLIC_URL + card.type} style={{ opacity: '0.2' }} alt="" />
               450 мл
             </p>
             <div className="cardpages__group">
@@ -44,7 +44,7 @@ const CardPages = () => {
             </div>
             <div className="pricelist">
               <button className="pricelist__share">
-                <img src="/img/share.svg" alt="share" />
+                <img src={process.env.PUBLIC_URL + "/img/share.svg"} alt="share" />
               </button>
               <div className="pricelist__block">
                 <p className="pricelist__text">
@@ -90,7 +90,7 @@ const CardPages = () => {
               >
                 Описание
                 <img
-                  src="/img/checkbox-img.svg"
+                  src={process.env.PUBLIC_URL + "/img/checkbox-img.svg"}
                   alt=""
                   className="checkbox__img"
                 />
