@@ -57,7 +57,7 @@ console.log(4)
                 <p className="cardpages__price">{card.price * card.counter } ₸</p>
                 <div className="card-basket__br" />
                 <button onClick={() => onRemoveCardBasket(card)}>
-                  <img src={process.env.PUBLIC_URL + "/img/basket-basket.svg"} alt="basket" />
+                  <img src={process.env.PUBLIC_URL + "img/basket-basket.svg"} alt="basket" />
                 </button>
               </div>
             </div>

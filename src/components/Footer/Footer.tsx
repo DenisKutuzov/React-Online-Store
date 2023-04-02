@@ -6,7 +6,7 @@ const Footer = () => {
     <div style={{background : '#3f4e65', boxShadow: ' 0px 15px 70px -11px rgba(43, 28, 1, 0.04)'}}>
     <div className="wrapper footer ">
       <div className="footer__left">
-        <img src={process.env.PUBLIC_URL + "/img/sultanlogo.svg"} alt="" className="footer__img" />
+        <img src={process.env.PUBLIC_URL + "img/sultanlogo.svg"} alt="" className="footer__img" />
         <p className="footer__title">
           Компания «Султан» — снабжаем розничные магазины товарами "под ключ" в
           Кокчетаве и Акмолинской области
@@ -19,7 +19,7 @@ const Footer = () => {
             className="input-group__input"
           />
           <button className="input-group__btn">
-            <img src={process.env.PUBLIC_URL + "/img/footer-input-btn.svg"} alt="" />
+            <img src={process.env.PUBLIC_URL + "img/footer-input-btn.svg"} alt="" />
           </button>
         </div>
       </div>
@@ -47,8 +47,8 @@ const Footer = () => {
           <button className='footer__pricebtn'>Прайс-лист<img src="/img/price-btn.svg" alt="price" /></button>
           <span className='footer__item'>Связь в мессенджерах:</span>
           <div className='footer__seti'>
-            <img src={process.env.PUBLIC_URL + "/img/whatsup.svg"} alt="watsup" style={{marginRight: '10px'}}/>
-            <img src={process.env.PUBLIC_URL + "/img/telegram.svg"} alt="telegram" />
+            <img src={process.env.PUBLIC_URL + "img/whatsup.svg"} alt="watsup" style={{marginRight: '10px'}}/>
+            <img src={process.env.PUBLIC_URL + "img/telegram.svg"} alt="telegram" />
           </div>
         </div>
       </div>
@@ -60,8 +60,8 @@ const Footer = () => {
           <span>время работы: 9:00-20:00</span>
           <span>Заказать звонок</span>
           <div className='footer__cards'>
-            <img src={process.env.PUBLIC_URL + "/img/visa.svg"} alt="visa" style={{marginRight: '5px'}} /> 
-            <img src={process.env.PUBLIC_URL + "/img/mastercard.svg"} alt="mastercard" /> 
+            <img src={process.env.PUBLIC_URL + "img/visa.svg"} alt="visa" style={{marginRight: '5px'}} /> 
+            <img src={process.env.PUBLIC_URL + "img/mastercard.svg"} alt="mastercard" /> 
           </div>
         </div>
       </div>

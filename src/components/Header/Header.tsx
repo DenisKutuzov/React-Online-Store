@@ -14,19 +14,19 @@ const Header: FC = () => {
     <header className="header">
       <div className="burger">
         <button className="burger__btn">
-          <img src={process.env.PUBLIC_URL + '/img/burger-open.svg'} alt="" />
+          <img src={process.env.PUBLIC_URL + 'img/burger-open.svg'} alt="" />
         </button>
       </div>
       <div className="header__top">
         <div className="header__adress">
-          <img src={process.env.PUBLIC_URL + '/img/adress.svg'} alt="" />
+          <img src={process.env.PUBLIC_URL + 'img/adress.svg'} alt="" />
           <div>
             <p className="adress__title">г. Кокчетав, ул. Ж. Ташенова 129Б</p>
             <p className="adress__text">(Рынок Восточный)</p>
           </div>
         </div>
         <div className="header__adress header__adress-last ">
-          <img src={process.env.PUBLIC_URL + '/img/email.svg'} alt="" />
+          <img src={process.env.PUBLIC_URL + 'img/email.svg'} alt="" />
           <div>
             <p className="adress__title">opt.sultan@mail.ru </p>
             <p className="adress__text">На связи в любое время</p>
@@ -57,12 +57,12 @@ const Header: FC = () => {
       </div>
       <div className="header__down">
         <img
-          src={process.env.PUBLIC_URL + '/img/sultan-logo-header.svg'}
+          src={process.env.PUBLIC_URL + 'img/sultan-logo-header.svg'}
           alt="sultan"
         />
         <button className="header__catalog">
           Каталог
-          <img src={process.env.PUBLIC_URL + '/img/catalog-btn.svg'} alt="" />
+          <img src={process.env.PUBLIC_URL + 'img/catalog-btn.svg'} alt="" />
         </button>
         <form className="header__search">
           <input className="header__input" type="text" placeholder="Поиск..." />
@@ -83,7 +83,7 @@ const Header: FC = () => {
         </button>
         <div className="header__basket">
           <button onClick={() => navigate('/catalog/basket')}>
-            <img src={process.env.PUBLIC_URL + '/img/basket.svg'} alt="" />
+            <img src={process.env.PUBLIC_URL + 'img/basket.svg'} alt="" />
             <div className="header__counter">{cardItemBasket.length}</div>
           </button>
           <div>

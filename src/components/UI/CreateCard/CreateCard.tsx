@@ -119,7 +119,7 @@ const CreateCard : FC<CreateCardProps> = ({posts ,setPosts, setmodulCreateCard, 
       <div className="modal-createcard__form" >
         <button onClick={() => setmodulCreateCard(true)}>
           <img
-            src={process.env.PUBLIC_URL + "/img/closeCreateCard.svg"}
+            src={process.env.PUBLIC_URL + "img/closeCreateCard.svg"}
             alt="close"
             style={{ width: '20px', height: '20px' }}
           />

@@ -87,7 +87,7 @@ const Checkbox: FC<CheckboxCards> = ({
       <button className="checkbox__btn" onClick={() => setList(!list)}>
         Показать все{' '}
         <img
-          src={process.env.PUBLIC_URL + '/img/checkbox-img.svg'}
+          src={process.env.PUBLIC_URL + 'img/checkbox-img.svg'}
           alt=""
           className="checkbox__img"
         />{' '}

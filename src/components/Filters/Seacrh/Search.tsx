@@ -21,7 +21,7 @@ const Search: FC<SeacrhCard> = ({ value, onChangeSearch, posts }) => {
           placeholder="Поиск..."
         />
         <button className="search__btn">
-          <img src={process.env.PUBLIC_URL + "/img/search.svg"} alt="" />
+          <img src={process.env.PUBLIC_URL + "img/search.svg"} alt="" />
         </button>
       </div>
       {/* {posts.map((card) => {

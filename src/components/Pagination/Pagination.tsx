@@ -27,7 +27,7 @@ const Pagination: FC<PaginationProps> = ({
   return (
     <div className="pagination">
       <button onClick={prevPage}>
-        <img src={process.env.PUBLIC_URL + "/img/paginationPrev.svg"} alt="" />
+        <img src={process.env.PUBLIC_URL + "img/paginationPrev.svg"} alt="" />
       </button>
       <ul className="pagination__ul">
         {pageNumbers.map((number) => (
@@ -51,7 +51,7 @@ const Pagination: FC<PaginationProps> = ({
       </ul>
       <button onClick={nextPage}>
       
-        <img src={process.env.PUBLIC_URL + "/img/paginationNext.svg"} alt="" />
+        <img src={process.env.PUBLIC_URL + "img/paginationNext.svg"} alt="" />
       </button>
     </div>
   )

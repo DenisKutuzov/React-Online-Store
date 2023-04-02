@@ -44,7 +44,7 @@ const CardPages = () => {
             </div>
             <div className="pricelist">
               <button className="pricelist__share">
-                <img src={process.env.PUBLIC_URL + "/img/share.svg"} alt="share" />
+                <img src={process.env.PUBLIC_URL + "img/share.svg"} alt="share" />
               </button>
               <div className="pricelist__block">
                 <p className="pricelist__text">
@@ -90,7 +90,7 @@ const CardPages = () => {
               >
                 Описание
                 <img
-                  src={process.env.PUBLIC_URL + "/img/checkbox-img.svg"}
+                  src={process.env.PUBLIC_URL + "img/checkbox-img.svg"}
                   alt=""
                   className="checkbox__img"
                 />
