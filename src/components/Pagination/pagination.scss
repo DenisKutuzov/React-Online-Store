@@ -35,10 +35,12 @@
   }
 
   &__link {
+    
     font-weight: 500;
     font-size: 14px;
     line-height: 130%;
     text-align: center;
     color: #3f4e65;
+    cursor: pointer;
   }
 }

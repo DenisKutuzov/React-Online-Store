@@ -39,18 +39,18 @@ const Pagination: FC<PaginationProps> = ({
                 : 'pagination__item'
             }
           >
-            <a
-              href="#!"
+            <p
+              // href="#!"
               className="pagination__link"
               onClick={() => paginate(number)}
             >
               {number}
-            </a>
+            </p>
           </li>
         ))}
       </ul>
       <button onClick={nextPage}>
-        {' '}
+      
         <img src={process.env.PUBLIC_URL + "/img/paginationNext.svg"} alt="" />
       </button>
     </div>

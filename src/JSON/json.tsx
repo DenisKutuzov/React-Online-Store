@@ -34,7 +34,7 @@ const cards: ICard[] = [
   {
     id: 3,
     urlImg:
-      'https://cdn.poryadok.ru/upload/iblock/039/0390bc52072436f0787783de776bc37d.jpg',
+      '/img/aos-crystal.png',
     title: 'Шампунь Dove, Hair Therapy Интенсивное восстановление',
     type: '/img/cardbottle.svg',
     size: '15X28.8 г',
@@ -50,7 +50,7 @@ const cards: ICard[] = [
   {
     id: 4,
     urlImg:
-      'https://neosbiolab.com/wp-content/uploads/2019/04/PD003-Sleansing-Gel-300x300.png',
+      '/img/crem1.png',
     title:
       'Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник',
     type: '/img/cardbottle.svg',
@@ -67,7 +67,7 @@ const cards: ICard[] = [
   {
     id: 5,
     urlImg:
-      'https://melisexpert.ru/upload/iblock/a2b/urr6v3jrseyfdhy80cj6zigfkatjmesv.png',
+      '/img/crem2.png',
     title: 'SHAMPOO Шампунь от выпадения и для роста волос',
     type: '/img/cardbottle.svg',
     size: '15X28.8 г',
@@ -83,7 +83,7 @@ const cards: ICard[] = [
   {
     id: 6,
     urlImg:
-      'https://spaonline.ru/wa-data/public/shop/skcatimage/73/thumbnail_massageoilprof_400x400.jpg',
+      '/img/crem3.png',
     title: 'Масло для массажа Базовое 1000',
     type: '/img/cardbottle.svg',
     size: '400мл',
@@ -99,7 +99,7 @@ const cards: ICard[] = [
   {
     id: 7,
     urlImg:
-      'https://spaonline.ru/wa-data/public/shop/products/52/08/852/images/1182/1182.750.JPG',
+      '/img/crem4.png',
     title: 'Масло для массажа Цветы Орхидеи 1000',
     type: '/img/cardbottle.svg',
     size: '450 мл',
@@ -115,7 +115,7 @@ const cards: ICard[] = [
   {
     id: 8,
     urlImg:
-      'https://spaonline.ru/wa-data/public/shop/products/52/08/852/images/1182/1182.750.JPG',
+      '/img/crem5.png',
     title: 'Масло для массажа Цветы Орхидеи 2000',
     type: '/img/cardbottle.svg',
     size: '450 мл',
@@ -130,7 +130,7 @@ const cards: ICard[] = [
   },
   {
     id: 9,
-    urlImg: '/img/aos-crystal.png',
+    urlImg: '/img/crem6.png',
     title: 'Масло для массажа Цветы Орхидеи 2000',
     type: '/img/cardbottle.svg',
     size: '450 мл',
@@ -146,7 +146,7 @@ const cards: ICard[] = [
   {
     id: 10,
     urlImg:
-      'https://spaonline.ru/wa-data/public/shop/products/27/09/927/images/1694/1694.750.jpg',
+      '/img/crem7.png',
     title: 'Соляной скраб для тела Молодость и Свежесть 1000',
     type: '/img/cardbox.svg',
     size: '300г',
@@ -161,7 +161,7 @@ const cards: ICard[] = [
   },
   {
     id: 11,
-    urlImg: '/img/ariel-gel.png',
+    urlImg: '/img/crem8.png',
     title:
       'ARIEL Автмат Гель СМС жидкое \nв растворимых капсулах Liquid Capsules Горный родник',
     type: '/img/cardbox.svg',
@@ -177,7 +177,7 @@ const cards: ICard[] = [
   },
   {
     id: 12,
-    urlImg: '/img/ariel-gel.png',
+    urlImg: '/img/crem9.png',
     title:
       'ARIEL Автмат Гель СМС жидкое \nв растворимых капсулах Liquid Capsules Горный родник',
     type: '/img/cardbox.svg',
@@ -194,7 +194,7 @@ const cards: ICard[] = [
   {
     id: 14,
     urlImg:
-      'https://cdn.poryadok.ru/upload/iblock/039/0390bc52072436f0787783de776bc37d.jpg',
+      '/img/crem10.png',
     title:
       'ARIEL Автмат Гель СМС жидкое \nв растворимых капсулах Liquid Capsules Горный родник',
     type: '/img/cardbox.svg',
@@ -211,7 +211,7 @@ const cards: ICard[] = [
   {
     id: 15,
     urlImg:
-      'https://cdn.poryadok.ru/upload/iblock/039/0390bc52072436f0787783de776bc37d.jpg',
+      '/img/crem11.png',
     title:
       'ARIEL Автмат Гель СМС жидкое \nв растворимых капсулах Liquid Capsules Горный родник',
     type: '/img/cardbox.svg',
@@ -244,7 +244,7 @@ const cards: ICard[] = [
   {
     id: 17,
     urlImg:
-      'https://spaonline.ru/wa-data/public/shop/products/52/08/852/images/1182/1182.750.JPG',
+      '/img/ariel-gel.png',
     title:
       'ARIEL Автмат Гель СМС жидкое \nв растворимых капсулах Liquid Capsules Горный родник',
     type: '/img/cardbox.svg',
