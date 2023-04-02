@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Link, Route, Routes } from 'react-router-dom'
 import Header from './components/Header/Header'
 import BasketPage from './pages/BasketPage/BasketPage'
 import CardPages from './pages/CardPages/CardPages'
@@ -83,7 +83,7 @@ function App() {
         setAllPrice,
       }}
     >
-      <BrowserRouter>
+      <HashRouter>
         <div className="wrapper">
           <Header />
         </div>
@@ -108,7 +108,7 @@ function App() {
           </Routes>
         </div>
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </AppContext.Provider>
   )
 }
