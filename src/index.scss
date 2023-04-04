@@ -17,8 +17,10 @@ body {
   max-width: 1370px;
   margin: 0 auto;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 970px) {
     max-width: none;
+    padding-right: 10px;
+    padding-left: 10px;
   }
 }
 
@@ -42,18 +44,3 @@ body {
   flex-direction: column;
 }
 
-.navbar {
-  &__item {
-    display: flex;
-    gap: 10px;
-  }
-
-  &__link {
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 120%;
-    color: #3f4e65;
-    padding-right: 10px;
-    border-right: 1px dashed rgba(63, 78, 101, 0.3);
-  }
-}

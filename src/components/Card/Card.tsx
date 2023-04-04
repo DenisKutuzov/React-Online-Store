@@ -1,8 +1,9 @@
-import React, { FC } from 'react'
+import { FC, useState } from 'react'
 import { ICard } from '../../types/types'
 import { useNavigate } from 'react-router-dom'
 import './card.scss'
 import ButtonBasket from '../UI/ButtonBasket/ButtonBasket'
+import ChangeCard from '../ChangeCard/ChangeCard'
 
 interface CardProps {
   card: ICard
@@ -17,6 +18,13 @@ const Card: FC<CardProps> = ({ card, posts, setPosts }) => {
 
   const navigate = useNavigate()
 
+
+  const [change, setChange] = useState(true)
+
+
+
+
+
   const removeCard = (id : number) => {
 
    let newArrayCards =  posts.filter((card) => card.id !== id)
@@ -29,7 +37,12 @@ const Card: FC<CardProps> = ({ card, posts, setPosts }) => {
   // console.log(navigate)
   return (
     <div className="card">
+      <ChangeCard card={card} change={change} setChange={setChange} setPosts={setPosts}/>
+      
+      <div style={{display: 'flex', }}>
+      <button className='card__btnchange' onClick={() => setChange(false)}>Изменить</button>
       <button className='card__btnremove' onClick={() => removeCard(card.id)}>Удалить</button>
+      </div>
       <img src={process.env.PUBLIC_URL + card.urlImg} alt="" className="card__urlimg" />
       <p className="card__type">
         <img src={card.type} alt="" />
@@ -39,7 +52,7 @@ const Card: FC<CardProps> = ({ card, posts, setPosts }) => {
         className="card__title"
         onClick={() => navigate(`/catalog/${card.barcode}`)}
       >
-        <span></span> {card.title}
+        <span>{card.brand}</span> {card.title}
       </p>
       <p className="card__barcode">
         Штрихкод: <b>{card.barcode}</b>

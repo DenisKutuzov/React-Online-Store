@@ -11,9 +11,10 @@ counter: number
 setCounter : (a : number) => void
 onPlus: (obj: ICard) => void
 onMin: (obj: ICard) => void
-increase? : (a : any) => void 
 allPrice : number,
 setAllPrice : (a : number) => void
+posts : ICard[]
+setPosts : (card : ICard[]) => void
   }
 
 const AppContext = createContext<MyContextType>({
@@ -38,11 +39,12 @@ const AppContext = createContext<MyContextType>({
   onMin: function (obj: ICard): void {
     throw new Error("Function not implemented.");
   },
-  increase: function (a: any): void {
-    throw new Error("Function not implemented.");
-  },
   allPrice: 0,
   setAllPrice: function (a: number): void {
+    throw new Error("Function not implemented.");
+  },
+  posts: [],
+  setPosts: function (card: ICard[]): void {
     throw new Error("Function not implemented.");
   }
 })

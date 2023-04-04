@@ -9,7 +9,7 @@ interface CardListProps {
 }
 
 const CardList: FC<CardListProps> = ({posts, setPosts}) => {
-  console.log(posts)
+  // console.log(posts)
   return (
     <div className='cardlist'>
         {posts.map( (card) =>{ 

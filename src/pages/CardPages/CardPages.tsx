@@ -1,42 +1,67 @@
-import React, { useState } from 'react'
+import { useContext, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ButtonBasket from '../../components/UI/ButtonBasket/ButtonBasket'
 import Counter from '../../components/UI/Counter/Counter'
-import cards from '../../JSON/json'
 import './cardPages.scss'
+import AppContext from '../../context'
+import { ICard } from '../../types/types'
 
 const CardPages = () => {
-  // const [basketButton, setBasketButton] = useState(false)
+
+  const { posts, cardItemBasket, onAddCardBasket, setPosts } = useContext(AppContext)
 
   const [description, setDescription] = useState(false)
+
+
+
+
+  const funCounter2 = (card: ICard) => {
+    console.log(card.id)
+    if (cardItemBasket.find((item) => item.id === card.id) && true) {
+        card.counter++
+        console.log( card.counter)
+        console.log(card)
+        setPosts([...posts, card])
+    } else {
+      onAddCardBasket(card)
+    }
+    console.log(cardItemBasket.find((item) => item.id === card.id) && true)
+  }
 
   const params = useParams()
   // console.log(params)
 
   // находим карточку по штрихкоду
   const searchTerm = params.baracode
-  const card = cards.filter((card) => card.barcode.toString() === searchTerm)
-  // console.log(card)
+  const card = posts.filter((card) => card.barcode.toString() === searchTerm)
 
   return (
     <>
       {card.map((card, indx) => (
         <div className="cardpages" key={indx}>
-          <img src={process.env.PUBLIC_URL + card.urlImg} alt="" className="cardpages__img" />
+          <img
+            src={process.env.PUBLIC_URL + card.urlImg}
+            alt=""
+            className="cardpages__img"
+          />
           <div className="cardpages__right">
             <p className="cardpages__availability">В наличие</p>
             <p className="cardpages__title">
               <span style={{ fontWeight: '800' }}>{card.brand}</span>
               {card.title}
             </p>
-            <p className="card__type">
-              <img src={process.env.PUBLIC_URL + card.type} style={{ opacity: '0.2' }} alt="" />
+            <p className="cardpages__type">
+              <img
+                src={process.env.PUBLIC_URL + card.type}
+                style={{ opacity: '0.2' }}
+                alt=""
+              />
               450 мл
             </p>
             <div className="cardpages__group">
               <p className="cardpages__price">{card?.price} ₸</p>
-           
-           <Counter card={card} />
+
+              <Counter card={card} />
               <ButtonBasket card={card} />
               {/* <button className="cardpages__basket">
           В корзину <img src="/img/basket-white.svg" alt="basket" />
@@ -44,7 +69,10 @@ const CardPages = () => {
             </div>
             <div className="pricelist">
               <button className="pricelist__share">
-                <img src={process.env.PUBLIC_URL + "img/share.svg"} alt="share" />
+                <img
+                  src={process.env.PUBLIC_URL + 'img/share.svg'}
+                  alt="share"
+                />
               </button>
               <div className="pricelist__block">
                 <p className="pricelist__text">
@@ -90,7 +118,7 @@ const CardPages = () => {
               >
                 Описание
                 <img
-                  src={process.env.PUBLIC_URL + "img/checkbox-img.svg"}
+                  src={process.env.PUBLIC_URL + 'img/checkbox-img.svg'}
                   alt=""
                   className="checkbox__img"
                 />

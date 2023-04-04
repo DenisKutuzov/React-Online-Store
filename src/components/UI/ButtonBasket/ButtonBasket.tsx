@@ -1,34 +1,35 @@
 import React, { FC, useContext, useState } from 'react'
 import AppContext from '../../../context'
 import { ICard } from '../../../types/types'
+import './buttonBasket.scss'
 
 export interface ButtonBasketProps {
   card: ICard
 }
 
 const ButtonBasket: FC<ButtonBasketProps> = ({ card }) => {
-  // console.log(22)
+  
 
   const { cardItemBasket, onAddCardBasket } = useContext(AppContext)
 
   let basketBtn = false
   if (cardItemBasket.find((item) => item.barcode === card.barcode)) {
-    // console.log(4234324)
+  
     basketBtn = true
   }
 
   const [basketButton, setBasketButton] = useState(basketBtn)
 
-  // console.log(cardItemBasket)
+
 
   if (cardItemBasket.find((item) => item.barcode === card.barcode)) {
-    // console.log(4234324)
+
   }
 
   return (
     <button
       className={
-        basketButton ? 'card__button card__button-close' : 'card__button'
+        basketButton ? 'button button-close' : 'button'
       }
       onClick={() => {
         setBasketButton(!basketButton)
@@ -36,7 +37,7 @@ const ButtonBasket: FC<ButtonBasketProps> = ({ card }) => {
       }}
     >
       {basketButton ? (
-        <>Добавлено</>
+        <>Убрать из корзины</>
       ) : (
         <>
           В КОРЗИНУ <img src={process.env.PUBLIC_URL + "img/basket-white.svg"} alt="" />

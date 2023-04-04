@@ -2,13 +2,36 @@
   display: flex;
   gap: 40px;
 
+  @media (max-width: 970px) {
+    flex-direction: column;
+align-items: center;
+  }
+
   &__img {
     width: 50%;
-    
+     @media (max-width: 970px) {
+    margin: 0 auto;
+    width: 70%;
+  }
   }
 
   &__right {
     width: 50%;
+    @media (max-width: 970px) {
+      width: 100%;
+    }
+  }
+
+  &__type{
+    display: flex;
+    gap: 5px;
+    font-weight: 400;
+font-size: 12px;
+line-height: 130%;
+margin-bottom: 25px;
+    @media (max-width: 970px) {
+     display: none; 
+    }
   }
 
   &__availability {
@@ -17,6 +40,10 @@
     line-height: 130%;
     color: #1fd85d;
     margin-bottom: 10px;
+
+    @media (max-width: 970px) {
+      
+    }
   }
 
   &__title {
@@ -27,6 +54,9 @@
     line-height: 150%;
     color: #111111;
     margin-bottom: 10px;
+    @media (max-width: 970px) {
+      font-size: 16px;
+    }
   }
 
   &__group {
@@ -34,6 +64,9 @@
     gap: 40px;
     align-items: center;
     margin-bottom: 20px;
+    @media (max-width: 970px) {
+      flex-wrap: wrap;
+    }
   }
 
   &__basket {
@@ -45,6 +78,9 @@ padding: 10px 19px;
 gap: 12px;
 background: #FFC85E;
 border-radius: 79px;
+@media (max-width: 970px) {
+      
+}
   }
 
   &__price {
@@ -52,6 +88,11 @@ border-radius: 79px;
     font-size: 30px;
     line-height: 130%;
     color: #111111;
+    @media (max-width: 970px) {
+      font-size: 16px;
+      line-height: 130%;
+    }
+  
   }
 
   &__btn {
@@ -102,6 +143,11 @@ border-radius: 79px;
   gap: 10px;
   margin-bottom: 35px;
 
+  @media (max-width: 970px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
   &__share {
     display: flex;
     flex-direction: row;
@@ -118,6 +164,9 @@ border-radius: 79px;
     line-height: 150%;
     text-align: center;
     color: #3f4e65;
+    @media (max-width: 970px) {
+      display: none;
+    }
   }
 
   &__block {

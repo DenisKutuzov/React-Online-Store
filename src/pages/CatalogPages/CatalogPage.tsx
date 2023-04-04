@@ -1,32 +1,22 @@
-import React, { useMemo, useState } from 'react'
+import React, { useContext, useMemo, useState } from 'react'
 import CardList from '../../components/CardList/CardList'
 import Categories from '../../components/Filters/Categories/Categories'
 import Pagination from '../../components/Pagination/Pagination'
 import Search from '../../components/Filters/Seacrh/Search'
 import SelectionPrice from '../../components/Filters/SelectionPrice/SelectionPrice'
 import Sort from '../../components/Filters/Sort/Sort'
-import cards from '../../JSON/json'
 import Chechbox from '../../components/Checkbox/Checkbox'
 import './catalogPage.scss'
-import CreateCard from '../../components/UI/CreateCard/CreateCard'
+import CreateCard from '../../components/CreateCard/CreateCard'
+import AppContext from '../../context'
+import ChangeCard from '../../components/ChangeCard/ChangeCard'
 
 function CatalogPage() {
-  let newCards = cards
-
-  if (localStorage.getItem('card')) {
-    console.log(JSON.parse(localStorage.getItem('card') || '[]'))
-    newCards = [...JSON.parse(localStorage.getItem('card') || '[]')]
-  }
-
-  if (newCards.length === 0) {
-    newCards = cards
-  }
-
-  // users = JSON.parse(localStorage.getItem('soredUsers') || '[]')
+  const { posts, setPosts } = useContext(AppContext)
 
   const [modulCreateCard, setmodulCreateCard] = useState(true)
 
-  const [posts, setPosts] = useState(newCards)
+  // const [posts, setPosts] = useState(newCards)
 
   const [emptyCheckbox, setEmptyCheckbox] = useState(false)
 
@@ -48,25 +38,19 @@ function CatalogPage() {
 
   // Сортировка по навазанию и цене
   const sortedPosts = useMemo(() => {
-    // console.log('обработала функция 1')
-
     switch (filter.sort) {
       case '':
-        // console.log(posts)
         return [...posts]
 
       case 'titleUp':
-        // console.log(posts)
         return [...posts].sort((a: any, b: any) =>
           a['title'].localeCompare(b['title'])
         )
 
       case 'priceUp':
-        // console.log(posts)
         return [...posts].sort((a: any, b: any) => a['price'] - b['price'])
 
       case 'priceDown':
-        // console.log(1)
         return [...posts].sort((a: any, b: any) => b['price'] - a['price'])
 
       default:
@@ -81,16 +65,13 @@ function CatalogPage() {
   }, [filter.priceMin, sortedPosts])
 
   const sortedPriceMax = useMemo(() => {
-    console.log('обработала функция price')
     return sortedPriceMin.filter((post) => post.price <= +filter.priceMax)
   }, [filter.priceMax, sortedPriceMin])
 
   // сортировка по checkbox
 
   const sortedCheckBox = useMemo(() => {
-    // console.log('обработала функция Box')
     return sortedPriceMax.filter((post) => {
-      // console.log(filter.checkBox)
       return post.manufacturer.toLowerCase().includes(filter.checkBox)
     })
   }, [filter.checkBox, sortedPriceMax])
@@ -98,8 +79,6 @@ function CatalogPage() {
   // Сортировка по Категориям
 
   const sortedCategories = useMemo(() => {
-    console.log(filter.categories)
-    console.log('обработала функция Категории')
     if (filter.categories === '') {
       return sortedCheckBox
     } else
@@ -136,6 +115,7 @@ function CatalogPage() {
 
   return (
     <>
+      {/* <ChangeCard/> */}
       <CreateCard
         posts={posts}
         setPosts={setPosts}
@@ -149,7 +129,6 @@ function CatalogPage() {
             className="catalogPage__createcard-btn"
             onClick={() => setmodulCreateCard(false)}
           >
-            {' '}
             Добавить карточку
           </button>
           <Sort
@@ -160,12 +139,18 @@ function CatalogPage() {
           />
         </div>
         <Categories
-          cards={newCards}
+          cards={posts}
           onClick={(e) => {
             setFilter({ ...filter, categories: e.target.value })
             // console.log(e.target.value)
           }}
         />
+        <div className='mobil-section'>
+          <p className="selection__title">ПОДБОР ПО ПАРАМЕТРАМ</p>
+          <div style={{position: 'relative'}}>
+          {/* <img src={process.env.PUBLIC_URL + 'img/mobil-activ.svg'} className='mobil-section__img' alt="" /> */}
+          </div>
+        </div>
         <div className="container">
           <div>
             <SelectionPrice
@@ -184,34 +169,32 @@ function CatalogPage() {
                 setFilter({ ...filter, query: e.target.value })
               }
               // onChangeBox={}
-              posts={newCards}
+              posts={posts}
             />
             <Chechbox
               checkedBool={() => setEmptyCheckbox(!emptyCheckbox)}
               value={emptyCheckbox}
-              posts={newCards}
+              posts={posts}
               onChange={(e: any) => {
-                // console.log(e.target.value)
                 if (emptyCheckbox) {
                   setFilter({ ...filter, checkBox: '' })
                 } else setFilter({ ...filter, checkBox: e.target.value })
               }}
             />
-             <Categories
-             style={style}
-          cards={newCards}
-          onClick={(e) => {
-            setFilter({ ...filter, categories: e.target.value })
-            // console.log(e.target.value)
-          }}
-        />
+            <Categories
+              style={style}
+              cards={posts}
+              onClick={(e) => {
+                setFilter({ ...filter, categories: e.target.value })
+              }}
+            />
           </div>
 
           <div className="cardlinkpagination">
-            <CardList posts={currentCards}  setPosts={setPosts} />
+            <CardList posts={currentCards} setPosts={setPosts} />
 
             {/* <button onClick={prevPage}>Down</button> */}
-            {newCards.length !== 0 && (
+            {posts.length !== 0 && (
               <Pagination
                 prevPage={prevPage}
                 nextPage={nextPage}
@@ -221,7 +204,7 @@ function CatalogPage() {
                 paginate={paginate}
               />
             )}
-            <p className='cardlinkpagination__text'>
+            <p className="cardlinkpagination__text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
               interdum ut justo, vestibulum sagittis iaculis iaculis. Quis
               mattis vulputate feugiat massa vestibulum duis. Faucibus

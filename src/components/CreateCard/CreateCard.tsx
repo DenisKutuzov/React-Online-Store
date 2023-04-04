@@ -1,6 +1,6 @@
-import React, { FC, useEffect, useMemo, useState } from 'react'
-import { ICard } from '../../../types/types'
-import { CheckboxGroup } from '../CheckBoxGroup/CheckboxGroup'
+import React, { FC, useState } from 'react'
+import { ICard } from '../../types/types'
+import { CheckboxGroup } from '../UI/CheckBoxGroup/CheckboxGroup'
 import './createCard.scss'
 
 export interface ICheckedGroup {
@@ -15,17 +15,19 @@ export interface ICheckboxGroupOption {
   entities: string[]
 }
 
-
 export interface CreateCardProps {
-    setPosts: (a: any ) => void  
-    setmodulCreateCard: (a: any ) => void 
-    modulCreateCard : boolean
-    posts: ICard[]
+  setPosts: (a: any) => void
+  setmodulCreateCard: (a: any) => void
+  modulCreateCard: boolean
+  posts: ICard[]
 }
 
-const CreateCard : FC<CreateCardProps> = ({posts ,setPosts, setmodulCreateCard, modulCreateCard}) => {
- 
-
+const CreateCard: FC<CreateCardProps> = ({
+  posts,
+  setPosts,
+  setmodulCreateCard,
+  modulCreateCard,
+}) => {
   const [title, seTitle] = useState('')
 
   const [urlImg, seTImg] = useState('')
@@ -47,17 +49,17 @@ const CreateCard : FC<CreateCardProps> = ({posts ,setPosts, setmodulCreateCard, 
       option: { optionNameRu: 'Категория', optionNameOnBackend: 'category' },
       entities: ['Уход за телом', 'Уход за руками'],
     },
-    {
-      option: { optionNameRu: 'Форма', optionNameOnBackend: 'form' },
-      entities: ['/img/cardbox.svg', '/img/cardbottle.svg'],
-    },
+    // {
+    //   option: { optionNameRu: 'Форма', optionNameOnBackend: 'form' },
+    //   entities: ['/img/cardbox.svg', '/img/cardbottle.svg'],
+    // },
   ]
   const [checkedBoxByGroup, setCheckedBoxByGroup] = useState<ICheckedGroup>({
     category: [],
     form: [],
   })
 
-  // console.log(checkedBoxByGroup)
+
 
   const handleChangeCheckedBoxGroup = (
     { target: { checked, value } }: any,
@@ -95,20 +97,17 @@ const CreateCard : FC<CreateCardProps> = ({posts ,setPosts, setmodulCreateCard, 
       price: Number(price),
       size,
       care: checkedBoxByGroup.category,
-      type: checkedBoxByGroup.form[0],
-      counter : 1,
+      type: '/img/cardbottle.svg',
+      counter: 1,
     }
     setmodulCreateCard(true)
 
-  const arr = [...posts, newCard]
-  setPosts((prev: any) => [...prev, newCard])
-    // setPosts((prev: any) => [...prev, newCard])
-    // console.log(newCard)
-    localStorage.setItem('card', JSON.stringify(arr));
-  
-   console.log(JSON.parse(localStorage.getItem('card')  || '{}'))
- 
-    // setPosts((prev: any) => [...newCard])
+    const arr = [...posts, newCard]
+    setPosts((prev: any) => [...prev, newCard])
+
+    localStorage.setItem('card', JSON.stringify(arr))
+
+    console.log(JSON.parse(localStorage.getItem('card') || '{}'))
   }
 
   return (
@@ -116,27 +115,26 @@ const CreateCard : FC<CreateCardProps> = ({posts ,setPosts, setmodulCreateCard, 
       className="modal-createcard"
       style={modulCreateCard ? { display: 'none' } : { display: 'flex' }}
     >
-      <div className="modal-createcard__form" >
+      <div className="modal-createcard__form">
         <button onClick={() => setmodulCreateCard(true)}>
           <img
-            src={process.env.PUBLIC_URL + "img/closeCreateCard.svg"}
+            src={process.env.PUBLIC_URL + 'img/closeCreateCard.svg'}
             alt="close"
             style={{ width: '20px', height: '20px' }}
           />
         </button>
         <p className="modal-createcard__text">Вставте сыллку на картинку</p>
         <input
-        name='urlImg'
+          name="urlImg"
           className="modal-createcard__input"
           type="text"
-
           // accept="image/*,image/jpeg"
           value={urlImg}
           onChange={(e) => seTImg(e.target.value)}
         />
         <p className="modal-createcard__text">Введите название</p>
         <input
-         name='title'
+          name="title"
           type="text"
           className="modal-createcard__input"
           value={title}
@@ -145,7 +143,7 @@ const CreateCard : FC<CreateCardProps> = ({posts ,setPosts, setmodulCreateCard, 
         />
         <p className="modal-createcard__text">Введите уникальный штрихкод</p>
         <input
-           name='barcode'
+          name="barcode"
           type="number"
           className="modal-createcard__input"
           value={barcode}
@@ -154,7 +152,7 @@ const CreateCard : FC<CreateCardProps> = ({posts ,setPosts, setmodulCreateCard, 
         />
         <p className="modal-createcard__text">Введите производителя</p>
         <input
-            name='manufacturer'
+          name="manufacturer"
           type="text"
           className="modal-createcard__input"
           value={manufacturer}
@@ -163,7 +161,7 @@ const CreateCard : FC<CreateCardProps> = ({posts ,setPosts, setmodulCreateCard, 
         />
         <p className="modal-createcard__text">Введите бренд</p>
         <input
-            name='brand'
+          name="brand"
           type="text"
           className="modal-createcard__input"
           value={brand}
@@ -172,7 +170,7 @@ const CreateCard : FC<CreateCardProps> = ({posts ,setPosts, setmodulCreateCard, 
         />
         <p className="modal-createcard__text">Введите описание</p>
         <input
-          name='description'
+          name="description"
           type="text"
           className="modal-createcard__input"
           value={description}
@@ -181,7 +179,7 @@ const CreateCard : FC<CreateCardProps> = ({posts ,setPosts, setmodulCreateCard, 
         />
         <p className="modal-createcard__text">Введите цену</p>
         <input
-           name='price'
+          name="price"
           type="number"
           className="modal-createcard__input"
           value={price}
@@ -214,10 +212,11 @@ const CreateCard : FC<CreateCardProps> = ({posts ,setPosts, setmodulCreateCard, 
           onChange={(e) => setSize(e.target.value)}
           required
         />
+      
         <button
           className="modal-createcard__btn"
           type="button"
-          value={price}
+          // value={price}
           onClick={addNewCard}
         >
           Создать карточку

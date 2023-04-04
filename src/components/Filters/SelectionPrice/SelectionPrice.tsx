@@ -11,7 +11,6 @@ interface PriceCards {
 const SelectionPrice : FC<PriceCards> = ({valueMin, valueMax,  onChangeMin, onChangeMax}) => {
   return (
     <div className="selection">
-      <p className="selection__title">ПОДБОР ПО ПАРАМЕТРАМ</p>
       <span className='selection__text'>
         Цена <b>₸</b>
       </span>
