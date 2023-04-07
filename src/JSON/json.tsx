@@ -3,9 +3,9 @@ import { ICard } from '../types/types'
 const cards: ICard[] = [
   {
     id: 1,
-    urlImg: 'img/aos-crystal.png',
+    urlImg: '/img/aos-crystal.png',
     title: 'Прокладки ежедневные DISCREET Multiform',
-    type: 'img/cardbox.svg',
+    type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 4604049297548,
     manufacturer: 'Проктер энд Гэмбл ООО',
@@ -18,9 +18,9 @@ const cards: ICard[] = [
   },
   {
     id: 2,
-    urlImg: 'img/ariel-gel.png',
+    urlImg: '/img/ariel-gel.png',
     title: 'Крем-мыло DOVE Красота и уход',
-    type: 'img/cardbox.svg',
+    type: '/img/cardbox.svg',
     size: '90г',
     barcode: 460204909756867,
     manufacturer: 'Россия',
@@ -34,9 +34,9 @@ const cards: ICard[] = [
   {
     id: 3,
     urlImg:
-      'img/aos-crystal.png',
+      '/img/aos-crystal.png',
     title: 'Шампунь Dove, Hair Therapy Интенсивное восстановление',
-    type: 'img/cardbottle.svg',
+    type: '/img/cardbottle.svg',
     size: '15X28.8 г',
     barcode: 46343404909688,
     manufacturer: 'Россия',
@@ -50,10 +50,10 @@ const cards: ICard[] = [
   {
     id: 4,
     urlImg:
-      'img/crem1.png',
+      '/img/crem1.png',
     title:
       'Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник',
-    type: 'img/cardbottle.svg',
+    type: '/img/cardbottle.svg',
     size: '15X28.8 г',
     barcode: 46554590975789,
     manufacturer: 'DISCREET',
@@ -67,9 +67,9 @@ const cards: ICard[] = [
   {
     id: 5,
     urlImg:
-      'img/crem2.png',
+      '/img/crem2.png',
     title: 'SHAMPOO Шампунь от выпадения и для роста волос',
-    type: 'img/cardbottle.svg',
+    type: '/img/cardbottle.svg',
     size: '15X28.8 г',
     barcode: 46040243429998,
     manufacturer: 'SHAMPOO',
@@ -83,9 +83,9 @@ const cards: ICard[] = [
   {
     id: 6,
     urlImg:
-      'img/crem3.png',
+      '/img/crem3.png',
     title: 'Масло для массажа Базовое 1000',
-    type: 'img/cardbottle.svg',
+    type: '/img/cardbottle.svg',
     size: '400мл',
     barcode: 460654355748,
     manufacturer: 'Senspa',
@@ -99,9 +99,9 @@ const cards: ICard[] = [
   {
     id: 7,
     urlImg:
-      'img/crem4.png',
+      '/img/crem4.png',
     title: 'Масло для массажа Цветы Орхидеи 1000',
-    type: 'img/cardbottle.svg',
+    type: '/img/cardbottle.svg',
     size: '450 мл',
     barcode: 4604013213242548,
     manufacturer: 'Senspa',
@@ -115,9 +115,9 @@ const cards: ICard[] = [
   {
     id: 8,
     urlImg:
-      'img/crem5.png',
+      '/img/crem5.png',
     title: 'Масло для массажа Цветы Орхидеи 2000',
-    type: 'img/cardbottle.svg',
+    type: '/img/cardbottle.svg',
     size: '450 мл',
     barcode: 4604132133242548,
     manufacturer: 'Senspa',
@@ -130,9 +130,9 @@ const cards: ICard[] = [
   },
   {
     id: 9,
-    urlImg: 'img/crem6.png',
+    urlImg: '/img/crem6.png',
     title: 'Масло для массажа Цветы Орхидеи 2000',
-    type: 'img/cardbottle.svg',
+    type: '/img/cardbottle.svg',
     size: '450 мл',
     barcode: 460401233242548,
     manufacturer: 'Senspa',
@@ -148,7 +148,7 @@ const cards: ICard[] = [
     urlImg:
       '/img/crem7.png',
     title: 'Соляной скраб для тела Молодость и Свежесть 1000',
-    type: 'img/cardbox.svg',
+    type: '/img/cardbox.svg',
     size: '300г',
     barcode: 460412313242548,
     manufacturer: 'DOVE',
@@ -164,7 +164,7 @@ const cards: ICard[] = [
     urlImg: '/img/crem8.png',
     title:
       'ARIEL Автмат Гель СМС жидкое \nв растворимых капсулах Liquid Capsules Горный родник',
-    type: 'img/cardbox.svg',
+    type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 43240213097548,
     manufacturer: 'Россия',
@@ -180,7 +180,7 @@ const cards: ICard[] = [
     urlImg: '/img/crem9.png',
     title:
       'ARIEL Автмат Гель СМС жидкое \nв растворимых капсулах Liquid Capsules Горный родник',
-    type: 'img/cardbox.svg',
+    type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 432404902327548,
     manufacturer: 'DISCREET',
@@ -194,10 +194,10 @@ const cards: ICard[] = [
   {
     id: 14,
     urlImg:
-      'img/crem10.png',
+      '/img/crem10.png',
     title:
       'ARIEL Автмат Гель СМС жидкое \nв растворимых капсулах Liquid Capsules Горный родник',
-    type: 'img/cardbox.svg',
+    type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 4324134954648,
     manufacturer: 'DISCREET',
@@ -211,10 +211,10 @@ const cards: ICard[] = [
   {
     id: 15,
     urlImg:
-      'img/crem11.png',
+      '/img/crem11.png',
     title:
       'ARIEL Автмат Гель СМС жидкое \nв растворимых капсулах Liquid Capsules Горный родник',
-    type: 'img/cardbox.svg',
+    type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 43241346577548,
     manufacturer: 'DISCREET',
@@ -227,10 +227,10 @@ const cards: ICard[] = [
   },
   {
     id: 16,
-    urlImg: 'img/ariel-gel.png',
+    urlImg: '/img/ariel-gel.png',
     title:
       'ARIEL Автмат Гель СМС жидкое \nв растворимых капсулах Liquid Capsules Горный родник',
-    type: 'img/cardbox.svg',
+    type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 4324165467548,
     manufacturer: 'Россия',
@@ -244,10 +244,10 @@ const cards: ICard[] = [
   {
     id: 17,
     urlImg:
-      'img/ariel-gel.png',
+      '/img/ariel-gel.png',
     title:
       'ARIEL Автмат Гель СМС жидкое \nв растворимых капсулах Liquid Capsules Горный родник',
-    type: 'img/cardbox.svg',
+    type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 43242231349048,
     manufacturer: 'DOVE',
@@ -260,10 +260,10 @@ const cards: ICard[] = [
   },
   {
     id: 18,
-    urlImg: 'img/aos-crystal.png',
+    urlImg: '/img/aos-crystal.png',
     title:
       'ARIEL Автмат Гель СМС жидкое \nв растворимых капсулах Liquid Capsules Горный родник',
-    type: 'img/cardbox.svg',
+    type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 4324134923437548,
     manufacturer: 'DOVE',

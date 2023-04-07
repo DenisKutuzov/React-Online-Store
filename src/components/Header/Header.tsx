@@ -1,7 +1,8 @@
-import React, { FC, useContext, useEffect, useState } from 'react'
+import { FC, useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import AppContext from '../../context'
 import './header.scss'
+import homePage from '../../homePage'
 
 const Header: FC = () => {
   const { cardItemBasket, allPrice, setAllPrice } = useContext(AppContext)
@@ -23,19 +24,19 @@ const Header: FC = () => {
         <div className="burger__top">
           <button className="burger__btn" onClick={() => setBurger(!burger)}>
             <img
-              src={process.env.PUBLIC_URL + '/img/burger-open.svg'}
+              src={homePage + '/img/burger-open.svg'}
               alt="burger"
             />
           </button>
           <img
             className="butger__sultanlog"
-            src={process.env.PUBLIC_URL + '/img/sultan-header-logo-mini.svg'}
+            src={homePage + '/img/sultan-header-logo-mini.svg'}
             alt="sultan"
           />
           <div className="header__basket">
             <button onClick={() => navigate('/catalog/basket')}>
               <img
-                src={process.env.PUBLIC_URL + '/img/basket.svg'}
+                src={homePage + '/img/basket.svg'}
                 alt="basket"
               />
               <div className="header__counter">{cardItemBasket.length}</div>
@@ -45,7 +46,7 @@ const Header: FC = () => {
         <div className="burger__down">
           <button className="bugrer__catalog">
             <img
-              src={process.env.PUBLIC_URL + '/img/catalog-btn.svg'}
+              src={homePage + '/img/catalog-btn.svg'}
               alt="catalog"
             />
             Каталог
@@ -63,7 +64,7 @@ const Header: FC = () => {
           <>
             <div className="burger__listtop">
               <div className="burger__adress">
-                <img src={process.env.PUBLIC_URL + '/img/adress.svg'} alt="" />
+                <img src={homePage + '/img/adress.svg'} alt="" />
                 <div>
                   <p className="burger__title">
                     г. Кокчетав, ул. Ж. Ташенова 129Б
@@ -72,7 +73,7 @@ const Header: FC = () => {
                 </div>
               </div>
               <div className="burger__adress burger__adress-last ">
-                <img src={process.env.PUBLIC_URL + '/img/email.svg'} alt="" />
+                <img src={homePage + '/img/email.svg'} alt="" />
                 <div>
                   <p className="burger__title">opt.sultan@mail.ru </p>
                   <p className="burger__text">На связи в любое время</p>
@@ -80,7 +81,7 @@ const Header: FC = () => {
               </div>
               <div className="header__adress">
                 <img
-                  src={process.env.PUBLIC_URL + '/img/logo-telefon.svg'}
+                  src={homePage + '/img/logo-telefon.svg'}
                   alt=""
                 />
                 <p className="burger__title">
@@ -97,7 +98,7 @@ const Header: FC = () => {
               <p className="listdown-menu__link">Возврат</p>
               <p className="listdown-menu__link">Контакты</p>
               <button className="header__price">
-                Прайс-лист <img src="img/price-btn.svg" alt="" />
+                Прайс-лист <img src={homePage + "/img/price-btn.svg"} alt="pryceList" />
               </button>
             </div>
           </>
@@ -107,14 +108,14 @@ const Header: FC = () => {
 
       <div className="header__top wrapper">
         <div className="header__adress">
-          <img src={process.env.PUBLIC_URL + '/img/adress.svg'} alt="" />
+          <img src={homePage + '/img/adress.svg'} alt="" />
           <div>
             <p className="adress__title">г. Кокчетав, ул. Ж. Ташенова 129Б</p>
             <p className="adress__text">(Рынок Восточный)</p>
           </div>
         </div>
         <div className="header__adress header__adress-last ">
-          <img src={process.env.PUBLIC_URL + '/img/email.svg'} alt="" />
+          <img src={homePage + '/img/email.svg'} alt="" />
           <div>
             <p className="adress__title">opt.sultan@mail.ru </p>
             <p className="adress__text">На связи в любое время</p>
@@ -147,13 +148,13 @@ const Header: FC = () => {
         <div className="header__down ">
           <div className="header__down-conttainer wrapper">
             <img
-              src={process.env.PUBLIC_URL + '/img/sultan-logo-header.svg'}
+              src={homePage + '/img/sultan-logo-header.svg'}
               alt="sultan"
             />
             <button className="header__catalog">
               Каталог
               <img
-                src={process.env.PUBLIC_URL + '/img/catalog-btn.svg'}
+                src={homePage + '/img/catalog-btn.svg'}
                 alt=""
               />
             </button>
@@ -164,7 +165,7 @@ const Header: FC = () => {
                 placeholder="Поиск..."
               />
               <button className="header__input-btn" type="submit">
-                <img src={process.env.PUBLIC_URL + '/img/search.svg'} alt="" />
+                <img src={homePage + '/img/search.svg'} alt="" />
               </button>
             </form>
             <div className="header__call">
@@ -174,7 +175,7 @@ const Header: FC = () => {
                 <p className="header__zakazcall">Заказать звонок</p>
               </div>
               <div className="header__imgwoman">
-                <img src={process.env.PUBLIC_URL + '/img/Group101.svg'} alt="" />
+                <img src={homePage + '/img/Group101.svg'} alt="" />
               </div>
             </div>
             <button className="header__price">
@@ -182,7 +183,7 @@ const Header: FC = () => {
             </button>
             <div className="header__basket">
               <button onClick={() => navigate('/basket')}>
-                <img src={process.env.PUBLIC_URL + '/img/basket.svg'} alt="" />
+                <img src={homePage + '/img/basket.svg'} alt="" />
                 <div className="header__counter">{cardItemBasket.length}</div>
               </button>
               <div>
