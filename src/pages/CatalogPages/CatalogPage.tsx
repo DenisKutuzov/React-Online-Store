@@ -22,7 +22,7 @@ function CatalogPage() {
 
   const [modulCreateCard, setmodulCreateCard] = useState(true)
 
-  const [emptyCheckbox, setEmptyCheckbox] = useState(false)
+  // const [emptyCheckbox, setEmptyCheckbox] = useState(false)
 
   const [currentPage, setCurrentPage] = useState(1)
 

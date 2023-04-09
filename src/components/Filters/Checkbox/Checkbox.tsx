@@ -1,4 +1,4 @@
-import { FC, useContext, useState } from 'react'
+import { FC, useState } from 'react'
 import { ICard } from '../../../types/types'
 import './checkBox.scss'
 import homePage from '../../../homePage'
@@ -7,7 +7,6 @@ import {
   ICheckboxGroupOption,
   ICheckedGroup,
 } from '../../CreateCard/CreateCard'
-import AppContext from '../../../context'
 
 interface CheckboxCards {
   posts: ICard[]
@@ -16,7 +15,7 @@ interface CheckboxCards {
 
 const Checkbox: FC<CheckboxCards> = ({ posts, onClickCheckBox }) => {
 
-   const {setPosts} = useContext(AppContext)
+  //  const {setPosts} = useContext(AppContext)
 
   const [list, setList] = useState(false)
 

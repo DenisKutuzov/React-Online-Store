@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import { useState } from 'react'
 import {
-  BrowserRouter,
-  HashRouter,
-  Link,
+
   Route,
   Routes,
 } from 'react-router-dom'
@@ -28,7 +26,7 @@ function App() {
     newCards = cards
   }
 
-  const [titleParams, setTitleParams] = useState()
+  // const [titleParams, setTitleParams] = useState()
 
   const [posts, setPosts] = useState(newCards)
 
