@@ -1,4 +1,4 @@
-import React, { FC, useContext } from 'react'
+import { FC, useContext } from 'react'
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 import AppContext from '../../../../context'
 
@@ -15,7 +15,7 @@ const {posts} = useContext(AppContext)
 
 
  
-  const { children, to, } = props
+  const { to, } = props
     const resolved = useResolvedPath(to)
 
     const match = useMatch({path: resolved.pathname, })

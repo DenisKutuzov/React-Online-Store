@@ -19,16 +19,17 @@ setPosts : (card : ICard[]) => void
 
 const AppContext = createContext<MyContextType>({
   onAddCardBasket: function (card: ICard): void {
-    throw new Error("Function not implemented.");
+   
   },
   cardItemBasket: [],
   // basketButton: false,
   onRemoveCardBasket: function (): void {
-    throw new Error("Function not implemented.");
+    
   },
   setCardItemBasket: function (prev: ICard[]): void {
-    throw new Error("Function not implemented.");
+  
   },
+
   counter: 0,
   setCounter: function (a: number): void {
     throw new Error("Function not implemented.");
@@ -40,9 +41,7 @@ const AppContext = createContext<MyContextType>({
     throw new Error("Function not implemented.");
   },
   allPrice: 0,
-  setAllPrice: function (a: number): void {
-    throw new Error("Function not implemented.");
-  },
+  setAllPrice: function (a: number): void {},
   posts: [],
   setPosts: function (card: ICard[]): void {
     throw new Error("Function not implemented.");

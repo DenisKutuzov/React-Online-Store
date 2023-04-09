@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import './sort.scss'
 
 interface SortProps {
@@ -19,11 +19,6 @@ const Sort: FC<SortProps> = ({value, onChange }) => {
         <option value="titleDown" >Название ↓</option>
         <option value="priceUp">Цена ↑</option>
         <option value="priceDown">Цена ↓</option>
-        {/* {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.name}
-          </option>
-        ))} */}
       </select>
     </div>
   )

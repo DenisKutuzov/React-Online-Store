@@ -3,9 +3,16 @@
     display: flex;
     padding: 14px 0;
 
+    @media (max-width: 1200px) {
+    }
+
     @media (max-width: 970px) {
       display: none;
     }
+  }
+  .header__adress-last {
+    margin-right: 0;
+    border-right: none;
   }
 
   &__adress {
@@ -14,21 +21,30 @@
     padding-right: 20px;
     border-right: 1px dashed rgba(0, 0, 0, 0.1);
     margin-right: 21px;
+
+    @media (max-width: 1200px) {
+      gap: 10px;
+      padding-right: 10px;
+      margin-right: 10px;
+    }
+    .adress__title {
+      font-weight: 600;
+      font-size: 14px;
+      @media (max-width: 1200px) {
+        font-size: 12px;
+      }
+    
   }
 
-  &__adress-last {
-    margin-right: 0;
-    border-right: none;
+
   }
 
-  &__title {
-    font-weight: 600;
-    font-size: 14px;
-  }
-
-  &__text {
+  .adress__text {
     font-weight: 300;
     font-size: 12px;
+    @media (max-width: 1200px) {
+      font-size: 9px;
+    }
   }
 
   &__ul {
@@ -42,6 +58,10 @@
     border-right: 1px dashed rgba(63, 78, 101, 0.1);
     padding-right: 30px;
     margin-right: 30px;
+    @media (max-width: 1200px) {
+      margin-right: 20px;
+      padding-right: 20px;
+    }
   }
 
   &__li-last {
@@ -53,14 +73,17 @@
   &__link {
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+
+    @media (max-width: 1200px) {
+      font-size: 12px;
+    }
   }
 
   &__down {
-   
-   
     border-top: 1px solid rgba(63, 78, 101, 0.2);
     border-bottom: 1px solid rgba(63, 78, 101, 0.2);
+    
+   
 
     @media (max-width: 970px) {
       display: none;
@@ -72,7 +95,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 5px 0;
-   
   }
 
   &__catalog {
@@ -91,6 +113,12 @@
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
+
+    @media (max-width: 1200px) {
+      width: 155px;
+      height: 50px;
+      padding: 5px 13px;
+    }
   }
 
   &__search {
@@ -108,6 +136,11 @@
     gap: 10px;
     background: #ededed;
     border-radius: 36px;
+
+    @media (max-width: 1200px) {
+      width: 155px;
+      height: 57px;
+    }
   }
 
   &__input-btn {
@@ -162,11 +195,11 @@
       border-radius: 50%/60% 60% 40% 40%;
       width: 70px;
       height: 92px;
-      top : 1px;
+      top: 1px;
       left: 3px;
     }
     &::before {
-       content: '';
+      content: '';
       position: absolute;
       border: 3px rgba(240, 246, 250, 1);
       background-color: #1fd85d;
@@ -192,6 +225,11 @@
     font-weight: 700;
     font-size: 14px;
     color: #ffffff;
+    @media (max-width: 1200px) {
+      width: 155px;
+      height: 50px;
+      padding: 5px 13px;
+    }
     @media (max-width: 970px) {
       width: 300px;
     }
@@ -323,5 +361,3 @@
     }
   }
 }
-
-

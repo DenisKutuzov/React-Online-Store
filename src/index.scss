@@ -4,14 +4,16 @@
 body {
   font-family: 'Inter';
   font-style: normal;
-  // -webkit-font-smoothing: antialiased;
-  // -moz-osx-font-smoothing: grayscale;
+
 }
 
-// code {
-//   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-//     monospace;
-// }
+
+a:active, /* активная/посещенная ссылка */
+a:hover,  /* при наведении */
+a {
+  text-decoration: none;
+  color: #3F4E65;
+}
 
 .wrapper {
   max-width: 1370px;

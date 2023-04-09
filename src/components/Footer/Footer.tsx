@@ -1,4 +1,4 @@
-import React from 'react'
+import homePage from '../../homePage'
 import './footer.scss'
 
 const Footer = () => {
@@ -13,20 +13,20 @@ const Footer = () => {
         <div className="footer__left">
           <div >
            
-            <div className="footer__mobil-activ">
+            <div style={{display : 'flex', justifyContent : 'space-between'}} >
             <img
-              src={process.env.PUBLIC_URL + 'img/sultanlogo.svg'}
+              src={homePage + '/img/sultanlogo.svg'}
               alt=""
               className="footer__img mobile-activ"
             />
                <img
-              src={process.env.PUBLIC_URL + 'img/sultan-footer-mobil.svg'}
+              src={homePage + '/img/sultan-footer-mobil.svg'}
               alt=""
-              className="footer__img"
+              className="footer__img footer__mobil-activ"
             />
-              <button className="footer__pricebtn">
+              <button className="footer__pricebtn footer__mobil-activ">
                 Прайс-лист
-                <img src="/img/price-btn.svg" alt="price" />
+                <img src={homePage + "/img/price-btn.svg"} alt="price" />
               </button>
             </div>
           </div>
@@ -43,7 +43,7 @@ const Footer = () => {
             />
             <button className="input-group__btn">
               <img
-                src={process.env.PUBLIC_URL + 'img/footer-input-btn.svg'}
+                src={homePage + '/img/footer-input-btn.svg'}
                 alt=""
               />
             </button>
@@ -74,17 +74,17 @@ const Footer = () => {
           <div className="footer__links">
             <button className="footer__pricebtn mobile-activ">
               Прайс-лист
-              <img src="/img/price-btn.svg" alt="price" />
+              <img src={homePage + "/img/price-btn.svg"} alt="price" />
             </button>
             <span className="footer__item">Связь в мессенджерах:</span>
             <div className="footer__seti">
               <img
-                src={process.env.PUBLIC_URL + 'img/whatsup.svg'}
+                src={homePage + '/img/whatsup.svg'}
                 alt="watsup"
                 style={{ marginRight: '10px' }}
               />
               <img
-                src={process.env.PUBLIC_URL + 'img/telegram.svg'}
+                src={homePage + '/img/telegram.svg'}
                 alt="telegram"
               />
             </div>
@@ -99,12 +99,12 @@ const Footer = () => {
             <span>Заказать звонок</span>
             <div className="footer__cards">
               <img
-                src={process.env.PUBLIC_URL + 'img/visa.svg'}
+                src={homePage + '/img/visa.svg'}
                 alt="visa"
                 style={{ marginRight: '5px' }}
               />
               <img
-                src={process.env.PUBLIC_URL + 'img/mastercard.svg'}
+                src={homePage + '/img/mastercard.svg'}
                 alt="mastercard"
               />
             </div>

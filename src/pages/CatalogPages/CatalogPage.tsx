@@ -5,18 +5,22 @@ import Pagination from '../../components/Pagination/Pagination'
 import Search from '../../components/Filters/Seacrh/Search'
 import SelectionPrice from '../../components/Filters/SelectionPrice/SelectionPrice'
 import Sort from '../../components/Filters/Sort/Sort'
-import Chechbox from '../../components/Checkbox/Checkbox'
+import Chechbox from '../../components/Filters/Checkbox/Checkbox'
 import './catalogPage.scss'
 import CreateCard from '../../components/CreateCard/CreateCard'
 import AppContext from '../../context'
-import ChangeCard from '../../components/ChangeCard/ChangeCard'
+import homePage from '../../homePage'
 
 function CatalogPage() {
   const { posts, setPosts } = useContext(AppContext)
 
-  const [modulCreateCard, setmodulCreateCard] = useState(true)
+  const [mobilMenuSearch, setMobilMenuSearch] = useState(true)
 
-  // const [posts, setPosts] = useState(newCards)
+  // if ( window.innerWidth >= 970) {
+  //   setMobilMenuSearch(true)
+  // }
+
+  const [modulCreateCard, setmodulCreateCard] = useState(true)
 
   const [emptyCheckbox, setEmptyCheckbox] = useState(false)
 
@@ -32,7 +36,7 @@ function CatalogPage() {
     query: '',
     priceMin: '0',
     priceMax: '10000',
-    checkBox: '',
+    checkBox: [] as string[],
     categories: '',
   })
 
@@ -71,9 +75,13 @@ function CatalogPage() {
   // сортировка по checkbox
 
   const sortedCheckBox = useMemo(() => {
-    return sortedPriceMax.filter((post) => {
-      return post.manufacturer.toLowerCase().includes(filter.checkBox)
-    })
+    if (filter.checkBox.length === 0) {
+      return sortedPriceMax
+    } else {
+      return sortedPriceMax.filter((post) => {
+        return filter.checkBox.includes(post.manufacturer)
+      })
+    }
   }, [filter.checkBox, sortedPriceMax])
 
   // Сортировка по Категориям
@@ -103,15 +111,37 @@ function CatalogPage() {
     return sortedAndSearchedPost.slice(firstCardsIndex, lastCardsIndex)
   }, [firstCardsIndex, lastCardsIndex, sortedAndSearchedPost])
 
-  const paginate = (pageNumbers: React.SetStateAction<number>) =>
+  const paginate = (pageNumbers: React.SetStateAction<number>) => {
+    window.scrollTo({
+      top: 200,
+      left: 0,
+    })
     setCurrentPage(pageNumbers)
+  }
 
   const nextPage = () => {
+    window.scrollTo({
+      top: 200,
+      left: 0,
+    })
+    console.log(currentPage)
     setCurrentPage((prev) => prev + 1)
+    console.log(currentPage)
   }
-  const prevPage = () => setCurrentPage((prev) => prev - 1)
+  const prevPage = () => {
+    window.scrollTo({
+      top: 200,
+      left: 0,
+    })
+    console.log(currentPage)
+    setCurrentPage((prev) => prev - 1)
+  }
 
-  const style = true
+  // const style = true
+
+  const onClickCheckBox = (list: any) => {
+    setFilter({ ...filter, checkBox: list })
+  }
 
   return (
     <>
@@ -122,6 +152,7 @@ function CatalogPage() {
         setmodulCreateCard={setmodulCreateCard}
         modulCreateCard={modulCreateCard}
       />
+
       <div className="wrapper catalogPage">
         <div className="catalogPage__titlegroup">
           <h1>Косметика и гигиена</h1>
@@ -139,51 +170,65 @@ function CatalogPage() {
           />
         </div>
         <Categories
-          cards={posts}
           onClick={(e) => {
             setFilter({ ...filter, categories: e.target.value })
             // console.log(e.target.value)
           }}
         />
-        <div className='mobil-section'>
+        <div
+          className="mobil-section"
+          style={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}
+        >
           <p className="selection__title">ПОДБОР ПО ПАРАМЕТРАМ</p>
-          <div style={{position: 'relative'}}>
-          {/* <img src={process.env.PUBLIC_URL + 'img/mobil-activ.svg'} className='mobil-section__img' alt="" /> */}
+          <div
+            style={{ position: 'relative' }}
+            onClick={() => setMobilMenuSearch(!mobilMenuSearch)}
+          >
+            <div style={{ display: 'flex', position: 'relative' }}>
+              <img
+                style={{ justifyContent: 'center' }}
+                src={homePage + '/img/mobil-activ.svg'}
+                className="mobil-section__img"
+                alt=""
+              />
+              <img
+                style={{ position: 'absolute', top: '12px', left: '12px' }}
+                src={homePage + '/img/mobilMenu-icon.svg'}
+                alt=""
+              />
+            </div>
           </div>
         </div>
         <div className="container">
           <div>
-            <SelectionPrice
-              valueMin={filter.priceMin}
-              valueMax={filter.priceMax}
-              onChangeMin={(e) =>
-                setFilter({ ...filter, priceMin: e.target.value })
-              }
-              onChangeMax={(e) =>
-                setFilter({ ...filter, priceMax: e.target.value })
-              }
-            />
-            <Search
-              value={filter.query}
-              onChangeSearch={(e) =>
-                setFilter({ ...filter, query: e.target.value })
-              }
-              // onChangeBox={}
-              posts={posts}
-            />
-            <Chechbox
-              checkedBool={() => setEmptyCheckbox(!emptyCheckbox)}
-              value={emptyCheckbox}
-              posts={posts}
-              onChange={(e: any) => {
-                if (emptyCheckbox) {
-                  setFilter({ ...filter, checkBox: '' })
-                } else setFilter({ ...filter, checkBox: e.target.value })
-              }}
-            />
+            {mobilMenuSearch && (
+              <>
+                <SelectionPrice
+                  valueMin={filter.priceMin}
+                  valueMax={filter.priceMax}
+                  onChangeMin={(e) =>
+                    setFilter({ ...filter, priceMin: e.target.value })
+                  }
+                  onChangeMax={(e) =>
+                    setFilter({ ...filter, priceMax: e.target.value })
+                  }
+                />
+                <Search
+                  value={filter.query}
+                  onChangeSearch={(e) =>
+                    setFilter({ ...filter, query: e.target.value })
+                  }
+                  // onChangeBox={}
+                  posts={posts}
+                />
+                <Chechbox       
+                  posts={posts}
+                  onClickCheckBox={onClickCheckBox}
+                />
+              </>
+            )}
             <Categories
-              style={style}
-              cards={posts}
+            
               onClick={(e) => {
                 setFilter({ ...filter, categories: e.target.value })
               }}

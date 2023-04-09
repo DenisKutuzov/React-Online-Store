@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import { FC, useState } from 'react'
 import { ICard } from '../../types/types'
 import { CheckboxGroup } from '../UI/CheckBoxGroup/CheckboxGroup'
 import './createCard.scss'

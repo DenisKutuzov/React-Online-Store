@@ -1,7 +1,8 @@
-import React from 'react'
 
-import { Link, useNavigate, useParams } from 'react-router-dom'
+
+import { Link,  } from 'react-router-dom'
 import Crumb from './Crumb/Crumb'
+import homePage from '../../../homePage'
 
 const BreadCrumbs = () => {
 
@@ -9,7 +10,7 @@ const BreadCrumbs = () => {
   return (
     <div className='wrapper '>
         <div className='crumb__item'>
-      <Link style={{border : 'none'}} to="/" className="crumb__link">
+      <Link style={{border : 'none'}} to="/" className="crumb__link" data-testid="main-link">
         Главная
       </Link>
       
@@ -19,7 +20,7 @@ const BreadCrumbs = () => {
       <Crumb to="/catalog/:baracode">Товар</Crumb>
       </div>
         <Link className='crumb__mobil-prev' to='/catalog'>
-            <img src={process.env.PUBLIC_URL + 'img/mobil-prev-BreadCrumbs.svg'} alt="back" />
+            <img src={homePage + '/img/mobil-prev-BreadCrumbs.svg'} alt="back" />
         </Link>
     </div>
   )

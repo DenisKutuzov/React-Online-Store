@@ -1,0 +1,48 @@
+.selection {
+  padding-top: 20px;
+  margin-bottom: 30px;
+}
+.selection__title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #111111;
+  margin-bottom: 10px;
+}
+@media (max-width: 970px) {
+  .selection__title {
+    margin-bottom: 0;
+  }
+}
+.selection__text {
+  display: block;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 150%;
+  color: #3f4e65;
+  margin-bottom: 16px;
+}
+.selection__price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.selection__input {
+  width: 105px;
+  height: 23px;
+  text-align: center;
+  padding: 4px 14px;
+  gap: 10px;
+  background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
+  border-radius: 1000px;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+  color: #3f4e65;
+}
+.selection__slash {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  color: #3f4e65;
+}

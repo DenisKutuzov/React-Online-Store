@@ -34,7 +34,7 @@ const Header: FC = () => {
             alt="sultan"
           />
           <div className="header__basket">
-            <button onClick={() => navigate('/catalog/basket')}>
+            <button onClick={() => navigate('/basket')}>
               <img
                 src={homePage + '/img/basket.svg'}
                 alt="basket"
@@ -44,7 +44,7 @@ const Header: FC = () => {
           </div>
         </div>
         <div className="burger__down">
-          <button className="bugrer__catalog">
+          <button className="bugrer__catalog" onClick={() => navigate('/catalog')}>
             <img
               src={homePage + '/img/catalog-btn.svg'}
               alt="catalog"
@@ -110,14 +110,14 @@ const Header: FC = () => {
         <div className="header__adress">
           <img src={homePage + '/img/adress.svg'} alt="" />
           <div>
-            <p className="adress__title">г. Кокчетав, ул. Ж. Ташенова 129Б</p>
+            <span className="adress__title">г. Кокчетав, ул. Ж. Ташенова 129Б</span>
             <p className="adress__text">(Рынок Восточный)</p>
           </div>
         </div>
         <div className="header__adress header__adress-last ">
           <img src={homePage + '/img/email.svg'} alt="" />
           <div>
-            <p className="adress__title">opt.sultan@mail.ru </p>
+            <span className="adress__title">opt.sultan@mail.ru </span>
             <p className="adress__text">На связи в любое время</p>
           </div>
         </div>
@@ -182,7 +182,7 @@ const Header: FC = () => {
               Прайс-лист <img src="img/price-btn.svg" alt="" />
             </button>
             <div className="header__basket">
-              <button onClick={() => navigate('/basket')}>
+              <button  data-testid="basket-link" onClick={() => navigate('/basket')}>
                 <img src={homePage + '/img/basket.svg'} alt="" />
                 <div className="header__counter">{cardItemBasket.length}</div>
               </button>

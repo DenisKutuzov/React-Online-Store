@@ -1,8 +1,9 @@
-import React, { FC, useContext, useState } from 'react'
+import { FC, useContext, useState } from 'react'
 import { ICard } from '../../types/types'
 import { ICheckboxGroupOption, ICheckedGroup } from '../CreateCard/CreateCard'
 import { CheckboxGroup } from '../UI/CheckBoxGroup/CheckboxGroup'
 import AppContext from '../../context'
+import homePage from '../../homePage'
 
 export interface ChangeCardProps {
   card: ICard
@@ -16,21 +17,19 @@ const ChangeCard: FC<ChangeCardProps> = ({setPosts, change, card, setChange }) =
    const {posts} = useContext(AppContext)
 
 
-    const [title, seTitle] = useState(card.title)
 
-    const [urlImg, seTImg] = useState(card.urlImg)
+   const [cardInput, setCardInput] = useState({
+    title: card.title,
+    urlImg: card.urlImg,
+    barcode: card.barcode,
+    manufacturer: card.manufacturer,
+    brand: card.brand,
+    description: card.description,
+    price: card.price,
+    size: card.size,
+  })
+
   
-    const [barcode, setBarcode] = useState(card.barcode)
-  
-    const [manufacturer, setManufacturer] = useState(card.manufacturer)
-  
-    const [brand, setBrand] = useState(card.brand)
-  
-    const [description, setDescription] = useState(card.description)
-  
-    const [price, setPrice] = useState(card.price)
-  
-    const [size, setSize] = useState(card.size)
 
 
     const checkboxGroupOptions: ICheckboxGroupOption[] = [
@@ -46,6 +45,7 @@ const ChangeCard: FC<ChangeCardProps> = ({setPosts, change, card, setChange }) =
       const [checkedBoxByGroup, setCheckedBoxByGroup] = useState<ICheckedGroup>({
         category: [],
         form: [],
+        manufacturer : [],
       })
     
     
@@ -79,24 +79,24 @@ const ChangeCard: FC<ChangeCardProps> = ({setPosts, change, card, setChange }) =
     const changeCard = (card : ICard) => {
         console.log(1)
      
-        const newCard = {
+        const newChangeCard = {
             id: card.id,
-            title,
-            urlImg,
-            barcode: Number(barcode),
-            manufacturer,
-            brand,
-            description,
-            price: Number(price),
-            size,
+            title: cardInput.title,
+            urlImg : cardInput.urlImg,
+            barcode: Number(cardInput.barcode),
+            manufacturer : cardInput.manufacturer,
+            brand : cardInput.brand,
+            description: cardInput.brand,
+            price: Number(cardInput.price),
+            size: cardInput.size,
             care: checkedBoxByGroup.category,
             type: '/img/cardbottle.svg',
             counter: 1,
           }
           setChange(true)
       
-        //   const arr = [...posts, newCard]
-         const arr = posts.map(item => item.id === newCard.id ? newCard : item)
+
+         const arr = posts.map(item => item.id === newChangeCard.id ? newChangeCard : item)
       
           localStorage.setItem('card', JSON.stringify(arr))
 
@@ -116,7 +116,7 @@ const ChangeCard: FC<ChangeCardProps> = ({setPosts, change, card, setChange }) =
       <div className="modal-createcard__form">
         <button onClick={() => setChange(true)}>
           <img
-            src={process.env.PUBLIC_URL + '/img/closeCreateCard.svg'}
+            src={homePage + '/img/closeCreateCard.svg'}
             alt="close"
             style={{ width: '20px', height: '20px' }}
           />
@@ -127,16 +127,16 @@ const ChangeCard: FC<ChangeCardProps> = ({setPosts, change, card, setChange }) =
           className="modal-createcard__input"
           type="text"
 
-            value={urlImg}
-            onChange={(e) => seTImg(e.target.value)}
+            value={cardInput.urlImg}
+            onChange={(e) =>  setCardInput({ ...cardInput, urlImg: e.target.value })}
         />
         <p className="modal-createcard__text">Введите название</p>
         <input
           name="title"
           type="text"
           className="modal-createcard__input"
-            value={title}
-            onChange={(e) => seTitle(e.target.value)}
+            value={cardInput.title}
+            onChange={(e) =>  setCardInput({ ...cardInput, title: e.target.value })}
           required
         />
         <p className="modal-createcard__text">Введите уникальный штрихкод</p>
@@ -144,8 +144,8 @@ const ChangeCard: FC<ChangeCardProps> = ({setPosts, change, card, setChange }) =
           name="barcode"
           type="number"
           className="modal-createcard__input"
-            value={barcode}
-            onChange={(e) => setBarcode(Number(e.target.value))}
+            value={cardInput.barcode}
+            onChange={(e) => setCardInput({ ...cardInput, barcode : Number(e.target.value) })}
           required
         />
         <p className="modal-createcard__text">Введите производителя</p>
@@ -153,8 +153,8 @@ const ChangeCard: FC<ChangeCardProps> = ({setPosts, change, card, setChange }) =
           name="manufacturer"
           type="text"
           className="modal-createcard__input"
-            value={manufacturer}
-            onChange={(e) => setManufacturer(e.target.value)}
+            value={cardInput.manufacturer}
+            onChange={(e) => setCardInput({ ...cardInput, manufacturer: e.target.value })}
           required
         />
         <p className="modal-createcard__text">Введите бренд</p>
@@ -162,8 +162,8 @@ const ChangeCard: FC<ChangeCardProps> = ({setPosts, change, card, setChange }) =
           name="brand"
           type="text"
           className="modal-createcard__input"
-            value={brand}
-            onChange={(e) => setBrand(e.target.value)}
+            value={cardInput.brand}
+            onChange={(e) => setCardInput({ ...cardInput, brand: e.target.value })}
           required
         />
         <p className="modal-createcard__text">Введите описание</p>
@@ -171,8 +171,8 @@ const ChangeCard: FC<ChangeCardProps> = ({setPosts, change, card, setChange }) =
           name="description"
           type="text"
           className="modal-createcard__input"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            value={cardInput.description}
+            onChange={(e) => setCardInput({ ...cardInput, description: e.target.value })}
           required
         />
         <p className="modal-createcard__text">Введите цену</p>
@@ -180,8 +180,8 @@ const ChangeCard: FC<ChangeCardProps> = ({setPosts, change, card, setChange }) =
           name="price"
           type="number"
           className="modal-createcard__input"
-            value={price}
-            onChange={(e) => setPrice(Number(e.target.value))}
+            value={cardInput.price}
+            onChange={(e) => setCardInput({ ...cardInput, price: Number(e.target.value) })}
           required
         />
         <p className="modal-createcard__text">
@@ -207,8 +207,8 @@ const ChangeCard: FC<ChangeCardProps> = ({setPosts, change, card, setChange }) =
         <input
           type="text"
           className="modal-createcard__input"
-            value={size}
-            onChange={(e) => setSize(e.target.value)}
+            value={cardInput.size}
+            onChange={(e) => setCardInput({ ...cardInput, size: e.target.value })}
           required
         />
 

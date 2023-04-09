@@ -4,6 +4,7 @@ import Counter from '../../components/UI/Counter/Counter'
 import MyModal from '../../components/UI/MyModal/MyModal'
 import AppContext from '../../context'
 import './basketPage.scss'
+import homePage from '../../homePage'
 
 const BasketPage: FC = () => {
   const {
@@ -30,7 +31,7 @@ const BasketPage: FC = () => {
   }
   console.log(4)
   return (
-    <div className="basketpage">
+    <div className="basketpage" data-testid="basket-page">
       <h2>Корзина</h2>
       {modalBasket && <MyModal />}
       {cardItemBasket.length > 0 ? (
@@ -38,13 +39,13 @@ const BasketPage: FC = () => {
           {cardItemBasket.map((card) => (
               <div className="card-basket" key={card.id}>
                 <img
-                  src={process.env.PUBLIC_URL + card.urlImg}
+                  src={card.urlImg.includes('https://') ? card.urlImg : homePage + card.urlImg}
                   alt=""
                   className="card-basket__img"
                 />
                 <div className="card-basket__group">
                   <div style={{ display: 'flex' }}>
-                    <img src={process.env.PUBLIC_URL + card.type} alt="" />
+                    <img src={homePage + card.type} alt="" />
                     <p>{card.size}</p>
                   </div>
                   <p className="card-basket__title">{card.title}</p>
@@ -60,7 +61,7 @@ const BasketPage: FC = () => {
                   <div className="card-basket__br" />
                   <button onClick={() => onRemoveCardBasket(card)}>
                     <img
-                      src={process.env.PUBLIC_URL + 'img/basket-basket.svg'}
+                      src={homePage + '/img/basket-basket.svg'}
                       alt="basket"
                     />
                   </button>

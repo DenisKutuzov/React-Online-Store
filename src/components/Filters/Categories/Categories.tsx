@@ -1,14 +1,12 @@
-import React, { FC } from 'react'
-import { ICard } from '../../../types/types'
+import { FC } from 'react'
 import './categories.scss'
 
 export interface CategoriesProps {
-  cards: ICard[]
   onClick: (e: any) => void
   style?: true
 }
 
-const Categories: FC<CategoriesProps> = ({ cards, onClick, style }) => {
+const Categories: FC<CategoriesProps> = ({onClick, style }) => {
   let categoriesList: string[] = [`Уход за телом`, 'Уход за руками']
 
   return (

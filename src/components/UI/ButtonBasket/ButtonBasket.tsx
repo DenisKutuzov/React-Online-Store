@@ -27,7 +27,7 @@ const ButtonBasket: FC<ButtonBasketProps> = ({ card }) => {
   }
 
   return (
-    <button
+    <button data-testid="addBasket-btn"
       className={
         basketButton ? 'button button-close' : 'button'
       }

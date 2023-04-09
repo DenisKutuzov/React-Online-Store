@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { FC } from 'react'
 
 interface ICheckboxGroupProps {
+  check?: boolean
     className?: string;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     checkedBoxByGroup: any;
     id: string;
     nameGroup: string;
@@ -13,7 +13,8 @@ interface ICheckboxGroupProps {
     ) => void;
   }
   
-  export const CheckboxGroup: React.FC<ICheckboxGroupProps> = ({
+  export const CheckboxGroup: FC <ICheckboxGroupProps> = ({
+    check,
     className,
     checkedBoxByGroup,
     id,
@@ -21,6 +22,7 @@ interface ICheckboxGroupProps {
     label,
     onChange,
   }) => {
+    
     const isChecked: boolean = checkedBoxByGroup[nameGroup].includes(label);
   
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,7 +36,7 @@ interface ICheckboxGroupProps {
       >
         <span >
       
-          <input
+          <input style={{marginRight : '10px'}}
             checked={isChecked}
             id={id}
             name={label}

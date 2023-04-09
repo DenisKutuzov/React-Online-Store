@@ -124,7 +124,7 @@ function App() {
         setPosts,
       }}
     >
-      <HashRouter>
+     
         <Header />
         <BreadCrumbs />
    
@@ -133,12 +133,10 @@ function App() {
             <Route path="/" element={<CatalogPage />} />
             <Route path="/catalog" element={<CatalogPage />} />
             <Route path="/catalog/:baracode" element={<CardPages />} />
-
             <Route path="/basket" element={<BasketPage />} />
           </Routes>
         </div>
         <Footer />
-      </HashRouter>
     </AppContext.Provider>
   )
 }

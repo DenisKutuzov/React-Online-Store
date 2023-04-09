@@ -4,56 +4,56 @@ import ButtonBasket from '../../components/UI/ButtonBasket/ButtonBasket'
 import Counter from '../../components/UI/Counter/Counter'
 import './cardPages.scss'
 import AppContext from '../../context'
-import { ICard } from '../../types/types'
+import homePage from '../../homePage'
 
 const CardPages = () => {
-
-  const { posts, cardItemBasket, onAddCardBasket, setPosts } = useContext(AppContext)
+  const { posts } = useContext(AppContext)
 
   const [description, setDescription] = useState(false)
 
-
-
-
-  const funCounter2 = (card: ICard) => {
-    console.log(card.id)
-    if (cardItemBasket.find((item) => item.id === card.id) && true) {
-        card.counter++
-        console.log( card.counter)
-        console.log(card)
-        setPosts([...posts, card])
-    } else {
-      onAddCardBasket(card)
-    }
-    console.log(cardItemBasket.find((item) => item.id === card.id) && true)
-  }
+  // const funCounter2 = (card: ICard) => {
+  //   console.log(card.id)
+  //   if (cardItemBasket.find((item) => item.id === card.id) && true) {
+  //       card.counter++
+  //       console.log( card.counter)
+  //       console.log(card)
+  //       setPosts([...posts, card])
+  //   } else {
+  //     onAddCardBasket(card)
+  //   }
+  //   console.log(cardItemBasket.find((item) => item.id === card.id) && true)
+  // }
 
   const params = useParams()
-  // console.log(params)
 
   // находим карточку по штрихкоду
   const searchTerm = params.baracode
   const card = posts.filter((card) => card.barcode.toString() === searchTerm)
 
   return (
-    <>
+    <div data-testid="card-page">
       {card.map((card, indx) => (
         <div className="cardpages" key={indx}>
-          <img
-            src={process.env.PUBLIC_URL + card.urlImg}
-            alt=""
-            className="cardpages__img"
-          />
+          <div className="cardpages__img">
+            <img
+              src={
+                card.urlImg.includes('https://')
+                  ? card.urlImg
+                  : homePage + card.urlImg
+              }
+              alt=""
+            />
+          </div>
           <div className="cardpages__right">
             <p className="cardpages__availability">В наличие</p>
             <p className="cardpages__title">
-              <span style={{ fontWeight: '800' }}>{card.brand}</span>
+              <span style={{ fontWeight: '800' }}>{card.brand}</span>{' '}
               {card.title}
             </p>
             <p className="cardpages__type">
               <img
-                src={process.env.PUBLIC_URL + card.type}
-                style={{ opacity: '0.2' }}
+                src={homePage + card.type}
+                style={{ opacity: '0.5' }}
                 alt=""
               />
               450 мл
@@ -69,10 +69,7 @@ const CardPages = () => {
             </div>
             <div className="pricelist">
               <button className="pricelist__share">
-                <img
-                  src={process.env.PUBLIC_URL + 'img/share.svg'}
-                  alt="share"
-                />
+                <img src={homePage + '/img/share.svg'} alt="share" />
               </button>
               <div className="pricelist__block">
                 <p className="pricelist__text">
@@ -81,7 +78,8 @@ const CardPages = () => {
                 </p>
               </div>
               <button className="pricelist__btn">
-                Прайс-лист <img src="/img/priceList.svg" alt="priceList" />
+                Прайс-лист{' '}
+                <img src={homePage + '/img/priceList.svg'} alt="priceList" />
               </button>
             </div>
             <div
@@ -118,19 +116,14 @@ const CardPages = () => {
               >
                 Описание
                 <img
-                  src={process.env.PUBLIC_URL + 'img/checkbox-img.svg'}
+                  src={homePage + '/img/checkbox-img.svg'}
                   alt=""
                   className="checkbox__img"
                 />
               </button>
               {description && (
                 <div className="description__text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam interdum ut justo, vestibulum sagittis iaculis iaculis.
-                  Quis mattis vulputate feugiat massa vestibulum duis. Faucibus
-                  consectetur aliquet sed pellentesque consequat consectetur
-                  congue mauris venenatis. Nunc elit, dignissim sed nulla
-                  ullamcorper enim, malesuada.
+                  {card?.description}
                 </div>
               )}
               <div className="description__br"></div>
@@ -138,7 +131,7 @@ const CardPages = () => {
           </div>
         </div>
       ))}
-    </>
+    </div>
   )
 }
 

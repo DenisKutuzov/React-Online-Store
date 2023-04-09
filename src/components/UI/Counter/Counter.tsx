@@ -1,4 +1,4 @@
-import React, { FC, useContext} from 'react'
+import { FC, useContext} from 'react'
 import AppContext from '../../../context'
 import { ICard } from '../../../types/types'
 
