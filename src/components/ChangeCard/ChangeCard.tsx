@@ -16,7 +16,7 @@ const ChangeCard: FC<ChangeCardProps> = ({setPosts, change, card, setChange }) =
 
    const {posts} = useContext(AppContext)
 
-console.log(card)
+// console.log(card)
 
 
 

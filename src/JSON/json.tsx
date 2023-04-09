@@ -12,7 +12,7 @@ const cards: ICard[] = [
     brand: 'DISCREET',
     description:
       'Ежедневные прокладки DISCREET Multiform Air без отдушек подарят вам ощущение свежести и красоты.',
-    price: 90,
+    price: 800,
     counter: 1,
     care: ['Уход за телом'],
   },

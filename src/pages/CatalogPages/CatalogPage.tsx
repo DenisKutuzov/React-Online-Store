@@ -10,6 +10,7 @@ import './catalogPage.scss'
 import CreateCard from '../../components/CreateCard/CreateCard'
 import AppContext from '../../context'
 import homePage from '../../homePage'
+import { ICard } from '../../types/types'
 
 function CatalogPage() {
   const { posts, setPosts } = useContext(AppContext)
@@ -27,7 +28,11 @@ function CatalogPage() {
   const lastCardsIndex = currentPage * cardsPerPages
   const firstCardsIndex = lastCardsIndex - cardsPerPages
 
-  let max = posts.reduce((acc, curr) => acc.price > curr.price ? acc : curr);
+  // Максимальный price для input из все карточек
+  // console.log(posts)
+ 
+   let max : ICard = posts.reduce((acc, curr) => acc.price > curr.price ? acc : curr);
+  //  console.log(max)
 
   const [filter, setFilter] = useState({
     sort: 'titleUp',
@@ -48,6 +53,11 @@ function CatalogPage() {
         return [...posts].sort((a: any, b: any) =>
           a['title'].localeCompare(b['title'])
         )
+
+        case 'titleDown':
+          return [...posts].sort((a: any, b: any) =>
+            b['title'].localeCompare(a['title'])
+          )
 
       case 'priceUp':
         return [...posts].sort((a: any, b: any) => a['price'] - b['price'])
@@ -108,6 +118,8 @@ function CatalogPage() {
   const currentCards = useMemo(() => {
     return sortedAndSearchedPost.slice(firstCardsIndex, lastCardsIndex)
   }, [firstCardsIndex, lastCardsIndex, sortedAndSearchedPost])
+
+
 
   const paginate = (pageNumbers: React.SetStateAction<number>) => {
     window.scrollTo({
