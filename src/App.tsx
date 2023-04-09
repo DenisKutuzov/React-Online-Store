@@ -28,6 +28,8 @@ function App() {
 
   // const [titleParams, setTitleParams] = useState()
 
+  const [change, setChange] = useState(true)
+
   const [posts, setPosts] = useState(newCards)
 
   const [cardItemBasket, setCardItemBasket] = useState<ICard[]>([])
@@ -119,7 +121,7 @@ function App() {
         allPrice,
         setAllPrice,
         posts,
-        setPosts,
+        setPosts, change, setChange
       }}
     >
      

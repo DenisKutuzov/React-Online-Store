@@ -28,21 +28,18 @@ const CreateCard: FC<CreateCardProps> = ({
   setmodulCreateCard,
   modulCreateCard,
 }) => {
-  const [title, seTitle] = useState('')
 
-  const [urlImg, seTImg] = useState('')
-
-  const [barcode, setBarcode] = useState('')
-
-  const [manufacturer, setManufacturer] = useState('')
-
-  const [brand, setBrand] = useState('')
-
-  const [description, setDescription] = useState('')
-
-  const [price, setPrice] = useState('')
-
-  const [size, setSize] = useState('')
+  
+  const [cardInput, setCardInput] = useState({
+    title: '',
+    urlImg: '',
+    barcode: '',
+    manufacturer: '',
+    brand: '',
+    description: '',
+    price: '',
+    size: '',
+  })
 
   const checkboxGroupOptions: ICheckboxGroupOption[] = [
     {
@@ -88,14 +85,14 @@ const CreateCard: FC<CreateCardProps> = ({
     e.preventDefault()
     const newCard = {
       id: Date.now(),
-      title,
-      urlImg,
-      barcode: Number(barcode),
-      manufacturer,
-      brand,
-      description,
-      price: Number(price),
-      size,
+      title : cardInput.title,
+      urlImg:  cardInput.urlImg,
+      barcode: Number(cardInput.barcode),
+      manufacturer : cardInput.manufacturer,
+      brand: cardInput.brand,
+      description : cardInput.description,
+      price: Number(cardInput.price),
+      size: cardInput.size,
       care: checkedBoxByGroup.category,
       type: '/img/cardbottle.svg',
       counter: 1,
@@ -128,17 +125,16 @@ const CreateCard: FC<CreateCardProps> = ({
           name="urlImg"
           className="modal-createcard__input"
           type="text"
-          // accept="image/*,image/jpeg"
-          value={urlImg}
-          onChange={(e) => seTImg(e.target.value)}
+          value={cardInput.urlImg}
+          onChange={(e) => setCardInput({ ...cardInput, urlImg: e.target.value })}
         />
         <p className="modal-createcard__text">Введите название</p>
         <input
           name="title"
           type="text"
           className="modal-createcard__input"
-          value={title}
-          onChange={(e) => seTitle(e.target.value)}
+          value={cardInput.title}
+          onChange={(e) => setCardInput({ ...cardInput, title: e.target.value })}
           required
         />
         <p className="modal-createcard__text">Введите уникальный штрихкод</p>
@@ -146,8 +142,8 @@ const CreateCard: FC<CreateCardProps> = ({
           name="barcode"
           type="number"
           className="modal-createcard__input"
-          value={barcode}
-          onChange={(e) => setBarcode(e.target.value)}
+          value={cardInput.barcode}
+          onChange={(e) => setCardInput({ ...cardInput, barcode: e.target.value })}
           required
         />
         <p className="modal-createcard__text">Введите производителя</p>
@@ -155,8 +151,8 @@ const CreateCard: FC<CreateCardProps> = ({
           name="manufacturer"
           type="text"
           className="modal-createcard__input"
-          value={manufacturer}
-          onChange={(e) => setManufacturer(e.target.value)}
+          value={cardInput.manufacturer}
+          onChange={(e) => setCardInput({ ...cardInput, manufacturer: e.target.value })}
           required
         />
         <p className="modal-createcard__text">Введите бренд</p>
@@ -164,8 +160,8 @@ const CreateCard: FC<CreateCardProps> = ({
           name="brand"
           type="text"
           className="modal-createcard__input"
-          value={brand}
-          onChange={(e) => setBrand(e.target.value)}
+          value={cardInput.brand}
+          onChange={(e) => setCardInput({ ...cardInput, brand: e.target.value })}
           required
         />
         <p className="modal-createcard__text">Введите описание</p>
@@ -173,8 +169,8 @@ const CreateCard: FC<CreateCardProps> = ({
           name="description"
           type="text"
           className="modal-createcard__input"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
+          value={cardInput.description}
+          onChange={(e) => setCardInput({ ...cardInput, description: e.target.value })}
           required
         />
         <p className="modal-createcard__text">Введите цену</p>
@@ -182,8 +178,8 @@ const CreateCard: FC<CreateCardProps> = ({
           name="price"
           type="number"
           className="modal-createcard__input"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
+          value={cardInput.price}
+          onChange={(e) => setCardInput({ ...cardInput, price: e.target.value })}
           required
         />
         <p className="modal-createcard__text">
@@ -208,8 +204,8 @@ const CreateCard: FC<CreateCardProps> = ({
         <input
           type="text"
           className="modal-createcard__input"
-          value={size}
-          onChange={(e) => setSize(e.target.value)}
+          value={cardInput.size}
+          onChange={(e) => setCardInput({ ...cardInput, size: e.target.value })}
           required
         />
       

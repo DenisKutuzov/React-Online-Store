@@ -1,7 +1,7 @@
-import React, { useContext, useMemo, useState } from 'react'
+import { useContext, useMemo, useState } from 'react'
 import CardList from '../../components/CardList/CardList'
 import Categories from '../../components/Filters/Categories/Categories'
-import Pagination from '../../components/Pagination/Pagination'
+import Pagination from '../../components/UI/Pagination/Pagination'
 import Search from '../../components/Filters/Seacrh/Search'
 import SelectionPrice from '../../components/Filters/SelectionPrice/SelectionPrice'
 import Sort from '../../components/Filters/Sort/Sort'
@@ -15,10 +15,6 @@ function CatalogPage() {
   const { posts, setPosts } = useContext(AppContext)
 
   const [mobilMenuSearch, setMobilMenuSearch] = useState(true)
-
-  // if ( window.innerWidth >= 970) {
-  //   setMobilMenuSearch(true)
-  // }
 
   const [modulCreateCard, setmodulCreateCard] = useState(true)
 
@@ -221,14 +217,10 @@ function CatalogPage() {
                   // onChangeBox={}
                   posts={posts}
                 />
-                <Chechbox       
-                  posts={posts}
-                  onClickCheckBox={onClickCheckBox}
-                />
+                <Chechbox posts={posts} onClickCheckBox={onClickCheckBox} />
               </>
             )}
             <Categories
-            
               onClick={(e) => {
                 setFilter({ ...filter, categories: e.target.value })
               }}

@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import './pagination.scss'
-import homePage from '../../homePage'
+import homePage from '../../../homePage'
 
 export interface PaginationProps {
   cardsPerPages: any
@@ -50,7 +50,10 @@ const Pagination: FC<PaginationProps> = ({
           </li>
         ))}
       </ul>
-      <button onClick={nextPage} disabled={currentPage + 1 > pageNumbers.length ? true : false}>
+      <button
+        onClick={nextPage}
+        disabled={currentPage + 1 > pageNumbers.length ? true : false}
+      >
         <img src={homePage + '/img/paginationNext.svg'} alt="next" />
       </button>
     </div>

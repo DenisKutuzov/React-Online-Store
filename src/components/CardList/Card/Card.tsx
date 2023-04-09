@@ -13,6 +13,9 @@ interface CardProps {
 }
 
 const Card: FC<CardProps> = ({ card, posts, setPosts }) => {
+
+  
+
   const navigate = useNavigate()
 
   const [change, setChange] = useState(true)

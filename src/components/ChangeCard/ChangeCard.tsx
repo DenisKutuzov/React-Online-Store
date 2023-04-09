@@ -6,7 +6,7 @@ import AppContext from '../../context'
 import homePage from '../../homePage'
 
 export interface ChangeCardProps {
-  card: ICard
+  card?: ICard
   change: boolean
   setChange: (a : boolean) => void
   setPosts: (a: any) => void
@@ -16,17 +16,19 @@ const ChangeCard: FC<ChangeCardProps> = ({setPosts, change, card, setChange }) =
 
    const {posts} = useContext(AppContext)
 
+console.log(card)
+
 
 
    const [cardInput, setCardInput] = useState({
-    title: card.title,
-    urlImg: card.urlImg,
-    barcode: card.barcode,
-    manufacturer: card.manufacturer,
-    brand: card.brand,
-    description: card.description,
-    price: card.price,
-    size: card.size,
+    title: card?.title,
+    urlImg: card?.urlImg,
+    barcode: card?.barcode,
+    manufacturer: card?.manufacturer,
+    brand: card?.brand,
+    description: card?.description,
+    price: card?.price,
+    size: card?.size,
   })
 
   
@@ -76,11 +78,11 @@ const ChangeCard: FC<ChangeCardProps> = ({setPosts, change, card, setChange }) =
 
 
 
-    const changeCard = (card : ICard) => {
+    const changeCard = (card : ICard | undefined) => {
         console.log(1)
      
         const newChangeCard = {
-            id: card.id,
+            id: card?.id,
             title: cardInput.title,
             urlImg : cardInput.urlImg,
             barcode: Number(cardInput.barcode),

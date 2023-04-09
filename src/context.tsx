@@ -15,35 +15,30 @@ allPrice : number,
 setAllPrice : (a : number) => void
 posts : ICard[]
 setPosts : (card : ICard[]) => void
+change: boolean,
+setChange : (a : boolean) => void
   }
 
 const AppContext = createContext<MyContextType>({
   onAddCardBasket: function (card: ICard): void {
-   
   },
   cardItemBasket: [],
   // basketButton: false,
   onRemoveCardBasket: function (): void {
-    
   },
   setCardItemBasket: function (prev: ICard[]): void {
-  
   },
 
   counter: 0,
-  setCounter: function (a: number): void {
-    throw new Error("Function not implemented.");
-  },
-  onPlus: function (obj: ICard): void {
-    throw new Error("Function not implemented.");
-  },
-  onMin: function (obj: ICard): void {
-    throw new Error("Function not implemented.");
-  },
+  setCounter: function (a: number): void { },
+  onPlus: function (obj: ICard): void { },
+  onMin: function (obj: ICard): void { },
   allPrice: 0,
-  setAllPrice: function (a: number): void {},
+  setAllPrice: function (a: number): void { },
   posts: [],
-  setPosts: function (card: ICard[]): void {
+  setPosts: function (card: ICard[]): void { },
+  change: false,
+  setChange: function (a: boolean): void {
     throw new Error("Function not implemented.");
   }
 })

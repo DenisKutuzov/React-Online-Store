@@ -52,7 +52,7 @@ const cards: ICard[] = [
     urlImg:
       '/img/crem1.png',
     title:
-      'Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник',
+      'Крем-мыло DOVE «Красота и уход»',
     type: '/img/cardbottle.svg',
     size: '15X28.8 г',
     barcode: 46554590975789,
@@ -163,7 +163,7 @@ const cards: ICard[] = [
     id: 11,
     urlImg: '/img/crem8.png',
     title:
-      'ARIEL Автмат Гель СМС жидкое \nв растворимых капсулах Liquid Capsules Горный родник',
+      'Масло для массажа Молодость и Свежесть 5000',
     type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 43240213097548,
@@ -179,7 +179,7 @@ const cards: ICard[] = [
     id: 12,
     urlImg: '/img/crem9.png',
     title:
-      'ARIEL Автмат Гель СМС жидкое \nв растворимых капсулах Liquid Capsules Горный родник',
+      'Масло для массажа Свежесть 5000',
     type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 432404902327548,
@@ -196,7 +196,7 @@ const cards: ICard[] = [
     urlImg:
       '/img/crem10.png',
     title:
-      'ARIEL Автмат Гель СМС жидкое \nв растворимых капсулах Liquid Capsules Горный родник',
+      'Масло для массажа Молодость 5000',
     type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 4324134954648,
@@ -213,7 +213,7 @@ const cards: ICard[] = [
     urlImg:
       '/img/crem11.png',
     title:
-      'ARIEL Автмат Гель СМС жидкое \nв растворимых капсулах Liquid Capsules Горный родник',
+      'Масло для массажа ',
     type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 43241346577548,
@@ -229,7 +229,7 @@ const cards: ICard[] = [
     id: 16,
     urlImg: '/img/ariel-gel.png',
     title:
-      'ARIEL Автмат Гель СМС жидкое \nв растворимых капсулах Liquid Capsules Горный родник',
+      'SHAMPOO Шампунь для роста волос',
     type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 4324165467548,
@@ -246,7 +246,7 @@ const cards: ICard[] = [
     urlImg:
       '/img/ariel-gel.png',
     title:
-      'ARIEL Автмат Гель СМС жидкое \nв растворимых капсулах Liquid Capsules Горный родник',
+      'SHAMPOO Шампунь от выпадения',
     type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 43242231349048,
@@ -262,7 +262,7 @@ const cards: ICard[] = [
     id: 18,
     urlImg: '/img/aos-crystal.png',
     title:
-      'ARIEL Автмат Гель СМС жидкое \nв растворимых капсулах Liquid Capsules Горный родник',
+      'SHAMPOO Шампунь ежедневный уход',
     type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 4324134923437548,
