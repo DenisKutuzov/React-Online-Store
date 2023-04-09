@@ -2,6 +2,7 @@ import React, { FC, useContext, useState } from 'react'
 import AppContext from '../../../context'
 import { ICard } from '../../../types/types'
 import './buttonBasket.scss'
+import homePage from '../../../homePage'
 
 export interface ButtonBasketProps {
   card: ICard
@@ -40,7 +41,7 @@ const ButtonBasket: FC<ButtonBasketProps> = ({ card }) => {
         <>Убрать из корзины</>
       ) : (
         <>
-          В КОРЗИНУ <img src={process.env.PUBLIC_URL + "img/basket-white.svg"} alt="" />
+          В КОРЗИНУ <img src={homePage + "/img/basket-white.svg"} alt="" />
         </>
       )}
     </button>
