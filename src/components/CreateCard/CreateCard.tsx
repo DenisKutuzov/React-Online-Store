@@ -105,6 +105,17 @@ const CreateCard: FC<CreateCardProps> = ({
     localStorage.setItem('card', JSON.stringify(arr))
 
     console.log(JSON.parse(localStorage.getItem('card') || '{}'))
+
+    setCardInput({
+      title: '',
+      urlImg: '',
+      barcode: '',
+      manufacturer: '',
+      brand: '',
+      description: '',
+      price: '',
+      size: '',
+    })
   }
 
   return (

@@ -27,11 +27,13 @@ function CatalogPage() {
   const lastCardsIndex = currentPage * cardsPerPages
   const firstCardsIndex = lastCardsIndex - cardsPerPages
 
+  let max = posts.reduce((acc, curr) => acc.price > curr.price ? acc : curr);
+
   const [filter, setFilter] = useState({
     sort: 'titleUp',
     query: '',
     priceMin: '0',
-    priceMax: '10000',
+    priceMax: max.price.toString(),
     checkBox: [] as string[],
     categories: '',
   })
