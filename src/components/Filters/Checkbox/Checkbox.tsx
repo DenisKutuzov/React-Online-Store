@@ -14,7 +14,6 @@ interface CheckboxCards {
 }
 
 const Checkbox: FC<CheckboxCards> = ({ posts, onClickCheckBox }) => {
-
   //  const {setPosts} = useContext(AppContext)
 
   const [list, setList] = useState(false)
@@ -67,7 +66,7 @@ const Checkbox: FC<CheckboxCards> = ({ posts, onClickCheckBox }) => {
   }
 
 
-
+  let numbersCard: null | number = null
 
   return (
     <div>
@@ -78,25 +77,32 @@ const Checkbox: FC<CheckboxCards> = ({ posts, onClickCheckBox }) => {
               style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}
               key={index}
             >
-              {item.entities.map((label, index) => (
-                <div key={index}
-                  style={
-                    index < 4 || list
-                      ? { display: 'flex' }
-                      : { display: 'none' }
-                  }
-                >
-                  <CheckboxGroup
-                    id={index.toString() + label}
-                    label={label}
-                    // check={check}
-                    checkedBoxByGroup={checkedBoxByGroup}
+              {item.entities.map((label, index) => {
+                numbersCard = posts.filter(
+                  (element) => element.manufacturer === label
+                ).length
+                return (
+                  <div
                     key={index}
-                    nameGroup={item.option.optionNameOnBackend}
-                    onChange={handleChangeCheckedBoxGroup}
-                  />
-                </div>
-              ))}
+                    style={
+                      index < 4 || list
+                        ? { display: 'flex' }
+                        : { display: 'none' }
+                    }
+                  >
+                    <CheckboxGroup
+                      numbersCard={numbersCard}
+                      id={index.toString() + label}
+                      label={label}
+                      // check={check}
+                      checkedBoxByGroup={checkedBoxByGroup}
+                      key={index}
+                      nameGroup={item.option.optionNameOnBackend}
+                      onChange={handleChangeCheckedBoxGroup}
+                    />
+                  </div>
+                )
+              })}
             </div>
           </div>
         ))}
@@ -111,7 +117,7 @@ const Checkbox: FC<CheckboxCards> = ({ posts, onClickCheckBox }) => {
         />{' '}
       </button>
       <div className="checkbox__br">
-        <div style={{ display: 'flex', gap : '10px' }}>
+        <div style={{ display: 'flex', gap: '10px' }}>
           <button
             className="checkbox__showbtn"
             onClick={() => onClickCheckBox(checkedBoxByGroup.category)}

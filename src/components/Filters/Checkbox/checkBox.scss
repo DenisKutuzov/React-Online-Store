@@ -33,21 +33,19 @@
   }
 }
 
-
 .checkbox__showbtn {
   width: 216px;
-  height: 49px;
+  // height: 49px;
   display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 10px 19px;
-gap: 12px;
-background: #FFC85E;
-border-radius: 79px;
-font-weight: 700;
-font-size: 14px;
-line-height: 17px;
-color: #FFFFFF;
-
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 19px;
+  // gap: 12px;
+  background: #ffc85e;
+  border-radius: 79px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
 }

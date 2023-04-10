@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 
 interface ICheckboxGroupProps {
+  numbersCard? : number | null,
   check?: boolean
     className?: string;
     checkedBoxByGroup: any;
@@ -14,6 +15,7 @@ interface ICheckboxGroupProps {
   }
   
   export const CheckboxGroup: FC <ICheckboxGroupProps> = ({
+    numbersCard,
     check,
     className,
     checkedBoxByGroup,
@@ -45,7 +47,7 @@ interface ICheckboxGroupProps {
             onChange={handleChange}
           />
         </span>
-        {label && <span>{label}</span>}
+        {label && <span>{label}</span>} {numbersCard && <span>({numbersCard})</span>}
       </label>
     );
   };

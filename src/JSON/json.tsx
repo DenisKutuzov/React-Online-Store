@@ -8,7 +8,7 @@ const cards: ICard[] = [
     type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 4604049297548,
-    manufacturer: 'Проктер энд Гэмбл ООО',
+    manufacturer: 'Гэмбл',
     brand: 'DISCREET',
     description:
       'Ежедневные прокладки DISCREET Multiform Air без отдушек подарят вам ощущение свежести и красоты.',
