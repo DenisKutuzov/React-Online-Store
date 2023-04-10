@@ -30,6 +30,11 @@
     &:hover {
       background: rgba(43, 28, 1, 0.04);
     }
+
+    &:active {
+      background: #373636;
+      color: #ffffff;
+    }
   }
 
   &__text {

@@ -7,6 +7,8 @@ export interface CategoriesProps {
 }
 
 const Categories: FC<CategoriesProps> = ({onClick, styleCategory }) => {
+
+
   let categoriesList: string[] = [`Уход за телом`, 'Уход за руками']
 
   return (

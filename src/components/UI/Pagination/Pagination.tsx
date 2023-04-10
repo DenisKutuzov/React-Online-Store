@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import './pagination.scss'
 import homePage from '../../../homePage'
 
@@ -19,12 +19,13 @@ const Pagination: FC<PaginationProps> = ({
   nextPage,
   currentPage,
 }) => {
+
   const pageNumbers = []
 
   for (let i = 1; i <= Math.ceil(totalCards / cardsPerPages); i++) {
     pageNumbers.push(i)
   }
-  console.log(pageNumbers)
+
   return (
     <div className="pagination">
       <button onClick={prevPage} disabled={currentPage === 1 ? true : false}>

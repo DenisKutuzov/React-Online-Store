@@ -1,21 +1,17 @@
-import { FC, useContext, useEffect, useState } from 'react'
+import { FC, useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import AppContext from '../../context'
 import './header.scss'
 import homePage from '../../homePage'
 
 const Header: FC = () => {
-  const { cardItemBasket, allPrice, setAllPrice } = useContext(AppContext)
+  const { cardItemBasket, allPrice,} = useContext(AppContext)
 
   const [burger, setBurger] = useState(false)
 
   const navigate = useNavigate()
 
-  useEffect(() => {
-    setAllPrice(
-      cardItemBasket.reduce((s, i) => (s = s + i.counter * i.price), 0)
-    )
-  }, [cardItemBasket, setAllPrice])
+
   //
   return (
     <header className="header ">

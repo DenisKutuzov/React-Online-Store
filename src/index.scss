@@ -4,7 +4,8 @@
 body {
   font-family: 'Inter';
   font-style: normal;
-
+  font-size: 14px;
+  color: #3F4E65;
 }
 
 
@@ -16,9 +17,9 @@ a {
 }
 
 .wrapper {
-  max-width: 1370px;
+  max-width: 1400px;
   margin: 0 auto;
-
+  padding: 0 15px 0 15px;
   @media (max-width: 970px) {
     max-width: none;
     padding-right: 10px;
@@ -29,6 +30,7 @@ a {
 .container {
   display: flex;
   gap: 108px;
+
 }
 
 .burger__btn {

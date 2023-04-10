@@ -26,15 +26,14 @@ const cards: ICard[] = [
     manufacturer: 'Россия',
     brand: 'DOVE',
     description:
-      'Шампунь для волос DOVE Nourishing Secrets «Густые и сильные» с лавандой и розмарином – питательное средство. Волосы выглядят более плотными, сильными и упругими уже после первого применения! Особенное питание DOVE в сочетании с экзотическими натуральными ингредиентами – это настоящий ритуал красоты, бережно отобранный для вас DOVE и доставленный на полочку вашей ванны с любовью и заботой. DOVE не проводит тесты на животных и имеет аккредитацию организации РЕТА.',
+      'Шампунь для волос DOVE Nourishing Secrets «Густые и сильные» с лавандой и розмарином – питательное средство.',
     price: 80,
     counter: 1,
     care: ['Уход за телом', 'Уход за руками'],
   },
   {
     id: 3,
-    urlImg:
-      '/img/aos-crystal.png',
+    urlImg: '/img/aos-crystal.png',
     title: 'Шампунь Dove, Hair Therapy Интенсивное восстановление',
     type: '/img/cardbottle.svg',
     size: '15X28.8 г',
@@ -49,10 +48,8 @@ const cards: ICard[] = [
   },
   {
     id: 4,
-    urlImg:
-      '/img/crem1.png',
-    title:
-      'Крем-мыло DOVE «Красота и уход»',
+    urlImg: '/img/crem1.png',
+    title: 'Крем-мыло DOVE «Красота и уход»',
     type: '/img/cardbottle.svg',
     size: '15X28.8 г',
     barcode: 46554590975789,
@@ -66,8 +63,7 @@ const cards: ICard[] = [
   },
   {
     id: 5,
-    urlImg:
-      '/img/crem2.png',
+    urlImg: '/img/crem2.png',
     title: 'SHAMPOO Шампунь от выпадения и для роста волос',
     type: '/img/cardbottle.svg',
     size: '15X28.8 г',
@@ -82,8 +78,7 @@ const cards: ICard[] = [
   },
   {
     id: 6,
-    urlImg:
-      '/img/crem3.png',
+    urlImg: '/img/crem3.png',
     title: 'Масло для массажа Базовое 1000',
     type: '/img/cardbottle.svg',
     size: '400мл',
@@ -98,8 +93,7 @@ const cards: ICard[] = [
   },
   {
     id: 7,
-    urlImg:
-      '/img/crem4.png',
+    urlImg: '/img/crem4.png',
     title: 'Масло для массажа Цветы Орхидеи 1000',
     type: '/img/cardbottle.svg',
     size: '450 мл',
@@ -114,8 +108,7 @@ const cards: ICard[] = [
   },
   {
     id: 8,
-    urlImg:
-      '/img/crem5.png',
+    urlImg: '/img/crem5.png',
     title: 'Масло для массажа Цветы Орхидеи 2000',
     type: '/img/cardbottle.svg',
     size: '450 мл',
@@ -145,8 +138,7 @@ const cards: ICard[] = [
   },
   {
     id: 10,
-    urlImg:
-      '/img/crem7.png',
+    urlImg: '/img/crem7.png',
     title: 'Соляной скраб для тела Молодость и Свежесть 1000',
     type: '/img/cardbox.svg',
     size: '300г',
@@ -162,8 +154,7 @@ const cards: ICard[] = [
   {
     id: 11,
     urlImg: '/img/crem8.png',
-    title:
-      'Масло для массажа Молодость и Свежесть 5000',
+    title: 'Масло для массажа Молодость и Свежесть 5000',
     type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 43240213097548,
@@ -178,8 +169,7 @@ const cards: ICard[] = [
   {
     id: 12,
     urlImg: '/img/crem9.png',
-    title:
-      'Масло для массажа Свежесть 5000',
+    title: 'Масло для массажа Свежесть 5000',
     type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 432404902327548,
@@ -193,10 +183,8 @@ const cards: ICard[] = [
   },
   {
     id: 14,
-    urlImg:
-      '/img/crem10.png',
-    title:
-      'Масло для массажа Молодость 5000',
+    urlImg: '/img/crem10.png',
+    title: 'Масло для массажа Молодость 5000',
     type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 4324134954648,
@@ -210,10 +198,8 @@ const cards: ICard[] = [
   },
   {
     id: 15,
-    urlImg:
-      '/img/crem11.png',
-    title:
-      'Масло для массажа ',
+    urlImg: '/img/crem11.png',
+    title: 'Масло для массажа ',
     type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 43241346577548,
@@ -228,8 +214,7 @@ const cards: ICard[] = [
   {
     id: 16,
     urlImg: '/img/ariel-gel.png',
-    title:
-      'SHAMPOO Шампунь для роста волос',
+    title: 'SHAMPOO Шампунь для роста волос',
     type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 4324165467548,
@@ -243,10 +228,8 @@ const cards: ICard[] = [
   },
   {
     id: 17,
-    urlImg:
-      '/img/ariel-gel.png',
-    title:
-      'SHAMPOO Шампунь от выпадения',
+    urlImg: '/img/ariel-gel.png',
+    title: 'SHAMPOO Шампунь от выпадения',
     type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 43242231349048,
@@ -261,8 +244,7 @@ const cards: ICard[] = [
   {
     id: 18,
     urlImg: '/img/aos-crystal.png',
-    title:
-      'SHAMPOO Шампунь ежедневный уход',
+    title: 'SHAMPOO Шампунь ежедневный уход',
     type: '/img/cardbox.svg',
     size: '15X28.8 г',
     barcode: 4324134923437548,

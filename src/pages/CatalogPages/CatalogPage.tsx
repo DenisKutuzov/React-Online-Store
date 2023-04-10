@@ -19,8 +19,6 @@ function CatalogPage() {
 
   const [modulCreateCard, setmodulCreateCard] = useState(true)
 
-  // const [emptyCheckbox, setEmptyCheckbox] = useState(false)
-
   const [currentPage, setCurrentPage] = useState(1)
 
   const [cardsPerPages] = useState(15)
@@ -29,12 +27,10 @@ function CatalogPage() {
   const firstCardsIndex = lastCardsIndex - cardsPerPages
 
   // Максимальный price для input из все карточек
-  // console.log(posts)
 
   let max: ICard = posts.reduce((acc, curr) =>
     acc.price > curr.price ? acc : curr
   )
-  //  console.log(max)
 
   const [filter, setFilter] = useState({
     sort: 'titleUp',
@@ -99,10 +95,11 @@ function CatalogPage() {
   const sortedCategories = useMemo(() => {
     if (filter.categories === '') {
       return sortedCheckBox
-    } else
+    } else {
       return sortedCheckBox.filter((post) =>
         post.care.includes(filter.categories)
       )
+    }
   }, [filter.categories, sortedCheckBox])
 
   // Сортировка по Поиску производителя
@@ -134,16 +131,13 @@ function CatalogPage() {
       top: 200,
       left: 0,
     })
-    console.log(currentPage)
     setCurrentPage((prev) => prev + 1)
-    console.log(currentPage)
   }
   const prevPage = () => {
     window.scrollTo({
       top: 200,
       left: 0,
     })
-    console.log(currentPage)
     setCurrentPage((prev) => prev - 1)
   }
 
@@ -163,9 +157,23 @@ function CatalogPage() {
         modulCreateCard={modulCreateCard}
       />
 
-      <div className="wrapper catalogPage">
+      <div className="catalogPage">
         <div className="catalogPage__titlegroup">
-          <h1>Косметика и гигиена</h1>
+          <h1
+            style={{ cursor: 'pointer' }}
+            onClick={() =>
+              setFilter({
+                sort: 'titleUp',
+                query: '',
+                priceMin: '0',
+                priceMax: max.price.toString(),
+                checkBox: [] as string[],
+                categories: '',
+              })
+            }
+          >
+            Косметика и гигиена
+          </h1>
           <button
             className="catalogPage__createcard-btn"
             onClick={() => setmodulCreateCard(false)}
