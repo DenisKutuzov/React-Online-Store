@@ -33,7 +33,7 @@ console.log(match?.pathname)
             Каталог
         </Link>) : <></> }
 
-        {match?.pathname === '/basket'  ? ( <Link to={to} className="crumb__link navbar__link-activ">
+        {match?.pathname === '/basket'  ? ( <Link to={to} className="crumb__link crumb__link-activ">
             Корзина
         </Link>) : <></> }
         {Number(match?.pathname.slice(9)) as number  ? (

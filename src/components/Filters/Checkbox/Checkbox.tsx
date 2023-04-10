@@ -117,7 +117,9 @@ const Checkbox: FC<CheckboxCards> = ({ posts, onClickCheckBox }) => {
         />{' '}
       </button>
       <div className="checkbox__br">
-        <div style={{ display: 'flex', gap: '10px' }}>
+       
+      </div>
+      <div style={{ display: 'flex', gap: '10px' }}>
           <button
             className="checkbox__showbtn"
             onClick={() => onClickCheckBox(checkedBoxByGroup.category)}
@@ -128,7 +130,6 @@ const Checkbox: FC<CheckboxCards> = ({ posts, onClickCheckBox }) => {
             <img src={homePage + '/img/basket-basket.svg'} alt="basket" />
           </button>
         </div>
-      </div>
     </div>
   )
 }

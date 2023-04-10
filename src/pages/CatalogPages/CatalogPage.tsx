@@ -30,8 +30,10 @@ function CatalogPage() {
 
   // Максимальный price для input из все карточек
   // console.log(posts)
- 
-   let max : ICard = posts.reduce((acc, curr) => acc.price > curr.price ? acc : curr);
+
+  let max: ICard = posts.reduce((acc, curr) =>
+    acc.price > curr.price ? acc : curr
+  )
   //  console.log(max)
 
   const [filter, setFilter] = useState({
@@ -54,10 +56,10 @@ function CatalogPage() {
           a['title'].localeCompare(b['title'])
         )
 
-        case 'titleDown':
-          return [...posts].sort((a: any, b: any) =>
-            b['title'].localeCompare(a['title'])
-          )
+      case 'titleDown':
+        return [...posts].sort((a: any, b: any) =>
+          b['title'].localeCompare(a['title'])
+        )
 
       case 'priceUp':
         return [...posts].sort((a: any, b: any) => a['price'] - b['price'])
@@ -118,8 +120,6 @@ function CatalogPage() {
   const currentCards = useMemo(() => {
     return sortedAndSearchedPost.slice(firstCardsIndex, lastCardsIndex)
   }, [firstCardsIndex, lastCardsIndex, sortedAndSearchedPost])
-
-
 
   const paginate = (pageNumbers: React.SetStateAction<number>) => {
     window.scrollTo({
@@ -235,6 +235,7 @@ function CatalogPage() {
               </>
             )}
             <Categories
+              styleCategory={true}
               onClick={(e) => {
                 setFilter({ ...filter, categories: e.target.value })
               }}
@@ -244,7 +245,6 @@ function CatalogPage() {
           <div className="cardlinkpagination">
             <CardList posts={currentCards} setPosts={setPosts} />
 
-            {/* <button onClick={prevPage}>Down</button> */}
             {posts.length !== 0 && (
               <Pagination
                 prevPage={prevPage}
@@ -263,7 +263,6 @@ function CatalogPage() {
               mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim,
               malesuada.
             </p>
-            {/* <button onClick={nextPage}>Up</button> */}
           </div>
         </div>
       </div>
