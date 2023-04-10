@@ -28,15 +28,23 @@ function CatalogPage() {
 
   // Максимальный price для input из все карточек
 
-  let max: ICard = posts.reduce((acc, curr) =>
+ let  max = 0
+
+  if (posts.length === 0) {
+    max = 0
+  } else {
+    max =  posts.reduce((acc, curr) =>
     acc.price > curr.price ? acc : curr
-  )
+  ).price
+  }
+
+  
 
   const [filter, setFilter] = useState({
     sort: 'titleUp',
     query: '',
     priceMin: '0',
-    priceMax: max.price.toString(),
+    priceMax: max.toString(),
     checkBox: [] as string[],
     categories: '',
   })
@@ -94,6 +102,7 @@ function CatalogPage() {
 
   const sortedCategories = useMemo(() => {
     if (filter.categories === '') {
+
       return sortedCheckBox
     } else {
       return sortedCheckBox.filter((post) =>
@@ -166,7 +175,7 @@ function CatalogPage() {
                 sort: 'titleUp',
                 query: '',
                 priceMin: '0',
-                priceMax: max.price.toString(),
+                priceMax: max.toString(),
                 checkBox: [] as string[],
                 categories: '',
               })

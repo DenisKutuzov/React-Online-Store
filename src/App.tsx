@@ -31,67 +31,14 @@ function App() {
 
   const [counter, setCounter] = useState(1)
 
-  const onPlus = (obj: ICard) => {
-    const countcard = ++obj.counter
 
-    setCardItemBasket((card) => {
-      console.log(obj.id)
-      return card.map((product) => {
-        if (product.id === obj.id) {
-          console.log(`${product.counter} + 1 это счетчик card`)
-          return {
-            ...product,
-            counter: countcard,
-          }
-        }
-        return product
-      })
-    })
-    setPosts((card) => {
-      return card.map((product) => {
-        if (product.id === obj.id) {
-          console.log(`${product.counter} + 1 это счетчик basket`)
-          return {
-            ...product,
-            counter: countcard,
-          }
-        }
-        return product
-      })
-    })
-  }
-
-  const onMin = (obj: ICard) => {
-    const countcard = --obj.counter
-
-    setCardItemBasket((card) => {
-      return card.map((product) => {
-        if (product.id === obj.id) {
-          return {
-            ...product,
-            counter: countcard - 1 > 0 ? countcard : 1,
-          }
-        }
-        return product
-      })
-    })
-    setPosts((card) => {
-      return card.map((product) => {
-        if (product.id === obj.id) {
-          return {
-            ...product,
-            counter: product.counter - 1 > 1 ? --product.counter : 1,
-          }
-        }
-        return product
-      })
-    })
-  }
-
+  // Удаляет из корзины
   const onRemoveCardBasket = (obj: ICard) => {
     setCardItemBasket((prev) => prev.filter((item) => item.id !== obj.id))
   }
 
+  // Добавляет в корзину
+  
   const onAddCardBasket = (obj: any) => {
     if (cardItemBasket.find((item) => item.id === obj.id)) {
       onRemoveCardBasket(obj)
@@ -103,8 +50,11 @@ function App() {
   // Считает сумму корзины
   useEffect(() => {
     setAllPrice(
-  
-   Number(cardItemBasket.reduce((s, i) => (s = s + i.counter * i.price), 0).toFixed(2))
+      Number(
+        cardItemBasket
+          .reduce((s, i) => (s = s + i.counter * i.price), 0)
+          .toFixed(2)
+      )
     )
   }, [cardItemBasket, setAllPrice])
 
@@ -117,8 +67,6 @@ function App() {
         onRemoveCardBasket,
         counter,
         setCounter,
-        onPlus,
-        onMin,
         allPrice,
         setAllPrice,
         posts,

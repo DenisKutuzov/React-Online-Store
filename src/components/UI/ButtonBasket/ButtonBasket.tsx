@@ -1,4 +1,4 @@
-import React, { FC, useContext, useState } from 'react'
+import { FC, useContext, useState } from 'react'
 import AppContext from '../../../context'
 import { ICard } from '../../../types/types'
 import './buttonBasket.scss'
